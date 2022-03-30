@@ -16,7 +16,6 @@ scores = pd.read_csv("../input/nfl-scores-and-betting-data/spreadspoke_scores.cs
 
 stadiums = pd.read_csv("../input/nfl-scores-and-betting-data/nfl_stadiums.csv") 
 nfl_combined = scores.join(stadiums.set_index('stadium_name'), on='stadium')
-# Teachers Version 
 
 nfl_combined.plot()
 
