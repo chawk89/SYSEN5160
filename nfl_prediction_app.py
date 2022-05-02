@@ -32,11 +32,6 @@ nfl_combined = nfl.join(team_stadiums.set_index('visitor_team'), on='team_away')
 
 
 
-## Get games past 2020:
-nfl_combined = nfl_combined[nfl_combined.schedule_season > 2020]
-
-
-
 
 # Space out the coluumns so the first one is 2x the size of the other one
 c1, c2 = st.columns((2, 1))
@@ -44,6 +39,11 @@ c1, c2 = st.columns((2, 1))
 header = st.container()
 with header:
     choice = st.radio("Choose to backtest historical dates or get predictions for this week",["This week","Historical"])
+    year = st.radio("Choose a start year",[2015,2016,2017,2018,2019,2020,2021])
+    week = st.radio("Choose a start week of season",[1,2,3,4,5,6,7,8,9,10,11,12])
+
+## Get games past [year]:
+nfl_combined = nfl_combined[nfl_combined.schedule_season > year and nfl_combined.schedule_week > week]
 
 with c1:
      st.table(scores)
