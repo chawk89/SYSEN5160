@@ -3,6 +3,19 @@ import streamlit as st
 import pandas as pd
 import time
 
+
+
+st.set_page_config(
+     page_title="NFL Game Predictor App",
+     page_icon="🧊",
+     layout="wide",
+     menu_items={
+         'Get Help': 'https://www.extremelycoolapp.com/help',
+         'Report a bug': "https://www.extremelycoolapp.com/bug",
+         'About': "# This is a header. This is an *extremely* cool app!"
+     }
+ )
+
 """
 # NFL Game Predictor
 How to use: 
@@ -12,8 +25,6 @@ How to use:
 """
 
 
-
-st.set_page_config(layout="wide")
 
 # Space out the coluumns so the first one is 2x the size of the other one
 c1, c2 = st.columns((2, 1))
