@@ -24,7 +24,7 @@ How to use:
 """
 
 scores = pd.read_csv('spreadspoke_scores.csv')
-stadiums = pd.read_csv('nfl_stadiums.csv')
+stadiums = pd.read_csv('nfl_stadiums.csv', encoding='latin1')
 team_stadiums = pd.read_csv('nfl_team_stadiums.csv')
 
 nfl = scores.join(stadiums.set_index('stadium_name'), on='stadium')
