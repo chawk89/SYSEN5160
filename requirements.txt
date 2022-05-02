@@ -3,8 +3,5 @@ pandas
 streamlit
 numpy
 
-sklearn.model_selection 
-sklearn.ensemble
-sklearn
 matplotlib.pyplot
 seaborn
