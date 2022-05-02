@@ -2,7 +2,7 @@ altair
 pandas
 streamlit
 numpy
-geopy.distance
+
 sklearn.model_selection 
 sklearn.ensemble
 sklearn
