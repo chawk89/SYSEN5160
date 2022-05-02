@@ -2,8 +2,7 @@
 import streamlit as st
 import pandas as pd
 import time
-
-
+import pandas as pd
 
 st.set_page_config(
      page_title="NFL Game Predictor App",
@@ -24,6 +23,19 @@ How to use:
 - Make a crowd pick to isolate the top recommendation! 
 """
 
+scores = pd.read_csv('spreadspoke_scores.csv')
+stadiums = pd.read_csv('nfl_stadiums.csv')
+team_stadiums = pd.read_csv('nfl_team_stadiums.csv')
+
+nfl = scores.join(stadiums.set_index('stadium_name'), on='stadium')
+nfl_combined = nfl.join(team_stadiums.set_index('visitor_team'), on='team_away')
+
+
+
+## Get games past 2020:
+nfl_combined = nfl_combined[nfl_combined.schedule_season > 2020]
+
+
 
 
 # Space out the coluumns so the first one is 2x the size of the other one
@@ -34,37 +46,15 @@ with header:
     choice = st.radio("Choose to backtest historical dates or get predictions for this week",["This week","Historical"])
 
 with c1:
-     article = "Anger and confusion overflowed at the Olympic mixed-team ski jumping final in China after five female competitors were disqualified from the event by officials who said their jumpsuits didn't comply with the rules."
-     input = st.text_area("Insert Text", article)
-
-#choice = st.sidebar.radio("Choose to backtest historical dates or get predictions for this week",["This week","Historical"])
-
-#st.sidebar.image("https://sportshub.cbsistatic.com/i/r/2021/12/06/e072d88c-0cd9-4390-b919-353d85710ebb/thumbnail/770x433/94d78d1afd5713db52124e1317f4e8cb/beijing-2022.jpg")    
-#st.sidebar.video("https://www.youtube.com/watch?v=SPKckEXhWwU")
-
-word_count = len(input.split())
+     st.table(nfl_combined)
 
 with c2:
-     st.write('Character count: ', len(input))
-     st.write('Word count: ', word_count)
-     "Please allow a few seconds for me to digest! Any radio button selection may add to the time."
-
-     if len(input) > 2000:
-          st.write("Input may be just a bit too long!")
+     clicked = st.button("Get best bets")
+     if clicked:
+          st.write('Getting bets!')
 
 
 
-gold = pd.DataFrame({ 'Year': ['2006','2010','2014','2018'],
-                    'Medals': [9,9,9,9]
-                       })
-
-silver = pd.DataFrame({ 'Year':['2006','2010','2014','2018'],
-                    'Medals': [9,15,9,8]
-                       })
-
-bronze = pd.DataFrame({ 'Year': ['2006','2010','2014','2018'],
-                    'Medals': [7,13,10,6]
-                       })
 
 
 if choice == "This week":
