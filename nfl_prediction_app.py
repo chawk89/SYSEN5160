@@ -11,14 +11,17 @@ How to use:
 - Make a crowd pick to isolate the top recommendation! 
 """
 
-header = st.container()
-with header:
-    choice = st.radio("Choose to backtest historical dates or get predictions for this week",["This week","Historical"])
+
 
 st.set_page_config(layout="wide")
 
 # Space out the coluumns so the first one is 2x the size of the other one
 c1, c2 = st.columns((2, 1))
+
+header = st.container()
+with header:
+    choice = st.radio("Choose to backtest historical dates or get predictions for this week",["This week","Historical"])
+
 
 article = "Anger and confusion overflowed at the Olympic mixed-team ski jumping final in China after five female competitors were disqualified from the event by officials who said their jumpsuits didn't comply with the rules."
 input = st.text_area("Insert Text", article)
