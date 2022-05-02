@@ -33,23 +33,24 @@ header = st.container()
 with header:
     choice = st.radio("Choose to backtest historical dates or get predictions for this week",["This week","Historical"])
 
-
-article = "Anger and confusion overflowed at the Olympic mixed-team ski jumping final in China after five female competitors were disqualified from the event by officials who said their jumpsuits didn't comply with the rules."
-input = st.text_area("Insert Text", article)
+with c1:
+     article = "Anger and confusion overflowed at the Olympic mixed-team ski jumping final in China after five female competitors were disqualified from the event by officials who said their jumpsuits didn't comply with the rules."
+     input = st.text_area("Insert Text", article)
 
 #choice = st.sidebar.radio("Choose to backtest historical dates or get predictions for this week",["This week","Historical"])
 
-st.sidebar.image("https://sportshub.cbsistatic.com/i/r/2021/12/06/e072d88c-0cd9-4390-b919-353d85710ebb/thumbnail/770x433/94d78d1afd5713db52124e1317f4e8cb/beijing-2022.jpg")    
-st.sidebar.video("https://www.youtube.com/watch?v=SPKckEXhWwU")
+#st.sidebar.image("https://sportshub.cbsistatic.com/i/r/2021/12/06/e072d88c-0cd9-4390-b919-353d85710ebb/thumbnail/770x433/94d78d1afd5713db52124e1317f4e8cb/beijing-2022.jpg")    
+#st.sidebar.video("https://www.youtube.com/watch?v=SPKckEXhWwU")
 
 word_count = len(input.split())
 
-st.write('Character count: ', len(input))
-st.write('Word count: ', word_count)
-"Please allow a few seconds for me to digest! Any radio button selection may add to the time."
+with c2:
+     st.write('Character count: ', len(input))
+     st.write('Word count: ', word_count)
+     "Please allow a few seconds for me to digest! Any radio button selection may add to the time."
 
-if len(input) > 2000:
-    st.write("Input may be just a bit too long!")
+     if len(input) > 2000:
+          st.write("Input may be just a bit too long!")
 
 
 
