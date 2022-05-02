@@ -58,7 +58,7 @@ else:
 
 
 with st.spinner('Wait for it...'):
-    output = 'hello world!
+    output = 'hello world!'
     
 st.success('Done!')
 
