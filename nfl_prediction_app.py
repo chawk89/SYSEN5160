@@ -43,7 +43,7 @@ with header:
     week = st.radio("Choose a start week of season",[1,2,3,4,5,6,7,8,9,10,11,12])
 
 ## Get games past [year]:
-nfl_combined = nfl_combined[nfl_combined.schedule_season > year and nfl_combined.schedule_week > week]
+nfl_combined = nfl_combined[nfl_combined.schedule_season > year]
 
 with c1:
      st.table(scores)
