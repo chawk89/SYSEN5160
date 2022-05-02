@@ -46,7 +46,7 @@ with header:
     choice = st.radio("Choose to backtest historical dates or get predictions for this week",["This week","Historical"])
 
 with c1:
-     st.table(nfl_combined)
+     st.table(scores)
 
 with c2:
      clicked = st.button("Get best bets")
