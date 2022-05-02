@@ -4,14 +4,26 @@ import pandas as pd
 import time
 
 """
-# Text Summarizer
-Add a snippet of an article to summarize. It may take 5-10 seconds to complete the task! The text summarizer is a transformer model from huggingface.co, pretrained on publisher content. 
+# NFL Game Predictor
+How to use: 
+- Gather information on weekly games.
+- Evaluate the game recommendations based on multiple criteria. 
+- Make a crowd pick to isolate the top recommendation! 
 """
+
+header = st.container()
+with header:
+    choice = st.radio("Choose to backtest historical dates or get predictions for this week",["This week","Historical"])
+
+st.set_page_config(layout="wide")
+
+# Space out the coluumns so the first one is 2x the size of the other one
+c1, c2 = st.columns((2, 1))
 
 article = "Anger and confusion overflowed at the Olympic mixed-team ski jumping final in China after five female competitors were disqualified from the event by officials who said their jumpsuits didn't comply with the rules."
 input = st.text_area("Insert Text", article)
 
-choice = st.sidebar.radio("Choose to backtest historical dates or get predictions for this week",["This week","Historical"])
+#choice = st.sidebar.radio("Choose to backtest historical dates or get predictions for this week",["This week","Historical"])
 
 st.sidebar.image("https://sportshub.cbsistatic.com/i/r/2021/12/06/e072d88c-0cd9-4390-b919-353d85710ebb/thumbnail/770x433/94d78d1afd5713db52124e1317f4e8cb/beijing-2022.jpg")    
 st.sidebar.video("https://www.youtube.com/watch?v=SPKckEXhWwU")
@@ -40,12 +52,12 @@ bronze = pd.DataFrame({ 'Year': ['2006','2010','2014','2018'],
                        })
 
 
-if choice == "gold":
+if choice == "This week":
     st.sidebar.dataframe(gold)
     st.sidebar.table(gold)
     st.sidebar.line_chart(gold.rename(columns={'Year':'index'}).set_index('index'))
     st.sidebar.bar_chart(gold.rename(columns={'Year':'index'}).set_index('index'))
-elif choice == "silver":
+elif choice == "Historical":
     st.sidebar.dataframe(silver)
     st.sidebar.table(silver)
     st.sidebar.line_chart(silver.rename(columns={'Year':'index'}).set_index('index'))
