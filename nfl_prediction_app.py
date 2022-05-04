@@ -76,6 +76,23 @@ with row2_2:
     if clicked:
      st.write('Getting bets!')
 
+
+# LAYING OUT THE 'Picks' OF THE APP
+row3_1, row3_2 = st.columns((2, 1))
+
+
+with row3_1:
+    st.write(
+        "**Here's the tradespace**"
+    )
+
+
+
+with row3_2:
+  st.write(
+        "**Here are the recommendations**"
+    )
+
 # LAYING OUT THE 'Evaluation' OF THE APP WITH THE MAPS
 row4_1, row4_2 = st.columns((2, 1))
 
@@ -94,22 +111,6 @@ with row4_2:
   clicked = st.button("Get my final recommendation!")
   if clicked:
    st.write('Getting pick!')
-
-# LAYING OUT THE 'Picks' OF THE APP
-row3_1, row3_2 = st.columns((2, 1))
-
-
-with row3_1:
-    st.write(
-        "**Here's the tradespace**"
-    )
-
-
-
-with row3_2:
-  st.write(
-        "**Here are the recommendations**"
-    )
 
 with st.spinner('Wait for it...'):
     output = 'hello world!'
