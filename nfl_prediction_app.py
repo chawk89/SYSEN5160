@@ -33,8 +33,6 @@ nfl_combined = nfl.join(team_stadiums.set_index('visitor_team'), on='team_away')
 
 
 
-# Space out the coluumns so the first one is 2x the size of the other one
-c1, c2 = st.columns((2, 1))
 
 header = st.container()
 with header:
@@ -43,10 +41,13 @@ with header:
     week = st.radio("Choose a start week of season",[1,2,3,4,5,6,7,8,9,10,11,12])
 
 ## Get games past [year]:
-nfl_combined = nfl_combined[nfl_combined.schedule_season > year]
+gather_data = nfl_combined[nfl_combined.schedule_season > year]
+
+# Space out the coluumns so the first one is 2x the size of the other one
+c1, c2 = st.columns((1, 1))
 
 with c1:
-     st.table(scores)
+     st.table(gather_data)
 
 with c2:
      clicked = st.button("Get best bets")
