@@ -54,13 +54,13 @@ nfl_combined = nfl.join(team_stadiums.set_index('visitor_team'), on='team_away')
 
 #Proxy data frame
 
-d = {'col1': [1, 2], 'col2': [3, 4]}
+d = {'team_home': [1, 2], 'team_away': [3, 4]}
 gather_data = pd.DataFrame(data=d)
 
 ##gather_data = nfl_combined[nfl_combined.schedule_season >= year] 
 ##gather_data = nfl_combined[nfl_combined.schedule_week >= week] 
      
-# LAYING OUT THE 'GATHER' OF THE APP WITH THE MAPS
+# LAYING OUT THE 'GATHER' OF THE APP 
 row2_1, row2_2 = st.columns((2, 1))
 
 
@@ -77,6 +77,25 @@ with row2_2:
      st.write('Getting bets!')
 
 # LAYING OUT THE 'Evaluation' OF THE APP WITH THE MAPS
+row4_1, row4_2 = st.columns((2, 1))
+
+
+with row4_1:
+    st.write(
+        "**Post poll on Reddit**"
+    )
+
+
+
+with row4_2:
+  st.write(
+        "**Get wisdom of the crowd through betting trends**"
+    )
+  clicked = st.button("Get my final recommendation!")
+  if clicked:
+   st.write('Getting pick!')
+
+# LAYING OUT THE 'Picks' OF THE APP
 row3_1, row3_2 = st.columns((2, 1))
 
 
@@ -84,6 +103,7 @@ with row3_1:
     st.write(
         "**Here's the tradespace**"
     )
+
 
 
 with row3_2:
