@@ -15,74 +15,66 @@ st.set_page_config(
      }
  )
 
-"""
-# NFL Game Predictor
-How to use: 
-- Gather information on weekly games.
-- Evaluate the game recommendations based on multiple criteria. 
-- Make a crowd pick to isolate the top recommendation! 
-"""
 
+
+# LAYOUT FOR THE TOP SECTION OF THE APP
+row1_1, row1_2 = st.columns((2, 3))
+
+with row1_1:
+    st.title("NFL Game Predictor App")
+    choice = st.radio("Choose to backtest historical dates or get predictions for this week",["This week","Historical"])
+
+with row1_2:
+    st.write(
+        """
+    ##
+    How to use: 
+     - Gather information on weekly games.
+     - Evaluate the game recommendations based on multiple criteria. 
+     - Make a crowd pick to isolate the top recommendation! 
+    """
+    )
+
+
+if choice == "Historical":
+    year = st.radio("Choose a start year",[2015,2016,2017,2018,2019,2020,2021])
+    week = st.slider("Choose a start week of season",1,12)
+
+elif choice == "This week":
+    year = 2021 
+    week = 12
+
+     
 scores = pd.read_csv('spreadspoke_scores.csv')
 stadiums = pd.read_csv('nfl_stadiums.csv', encoding='latin1')
 team_stadiums = pd.read_csv('nfl_team_stadiums.csv')
 
 nfl = scores.join(stadiums.set_index('stadium_name'), on='stadium')
 nfl_combined = nfl.join(team_stadiums.set_index('visitor_team'), on='team_away')
+     
+gather_data = nfl_combined[nfl_combined.schedule_season >= year] 
+gather_data = nfl_combined[nfl_combined.schedule_week >= week] 
+     
+# LAYING OUT THE MIDDLE SECTION OF THE APP WITH THE MAPS
+row2_1, row2_2 = st.columns((2, 1))
 
 
+with row2_1:
+    st.write(
+        f"""**All NFL Games from {year}**"""
+    )
+    st.table(gather_data)
 
+with row2_2:
+    st.write("**Gather Insights**")
+    clicked = st.button("Get best bets")
+    if clicked:
+     st.write('Getting bets!')
 
-
-header = st.container()
-with header:
-    choice = st.radio("Choose to backtest historical dates or get predictions for this week",["This week","Historical"])
-    year = st.radio("Choose a start year",[2015,2016,2017,2018,2019,2020,2021])
-    week = st.radio("Choose a start week of season",[1,2,3,4,5,6,7,8,9,10,11,12])
-
-## Get games past [year]:
-gather_data = nfl_combined[nfl_combined.schedule_season > year]
-
-# Space out the coluumns so the first one is 2x the size of the other one
-c1, c2 = st.columns((1, 1))
-
-with c1:
-     st.table(gather_data)
-
-with c2:
-     clicked = st.button("Get best bets")
-     if clicked:
-          st.write('Getting bets!')
-
-
-
-
-
-if choice == "This week":
-    st.sidebar.dataframe(gold)
-    st.sidebar.table(gold)
-    st.sidebar.line_chart(gold.rename(columns={'Year':'index'}).set_index('index'))
-    st.sidebar.bar_chart(gold.rename(columns={'Year':'index'}).set_index('index'))
-elif choice == "Historical":
-    st.sidebar.dataframe(silver)
-    st.sidebar.table(silver)
-    st.sidebar.line_chart(silver.rename(columns={'Year':'index'}).set_index('index'))
-    st.sidebar.bar_chart(siver.rename(columns={'Year':'index'}).set_index('index'))
-else:
-    st.sidebar.dataframe(bronze)
-    st.sidebar.table(bronze)
-    st.sidebar.line_chart(bronze.rename(columns={'Year':'index'}).set_index('index'))
-    st.sidebar.bar_chart(bronze.rename(columns={'Year':'index'}).set_index('index'))
 
 
 with st.spinner('Wait for it...'):
     output = 'hello world!'
     
 st.success('Done!')
-
-
-    
-c = st.empty()
-c.header('Summary:')
-st.subheader(output)
 st.balloons()
