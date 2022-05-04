@@ -53,7 +53,7 @@ nfl = scores.join(stadiums.set_index('stadium_name'), on='stadium')
 nfl_combined = nfl.join(team_stadiums.set_index('visitor_team'), on='team_away')
      
 gather_data = nfl_combined[nfl_combined.schedule_season >= year] 
-gather_data = nfl_combined[nfl_combined.schedule_week >= week] 
+##gather_data = nfl_combined[nfl_combined.schedule_week >= week] 
      
 # LAYING OUT THE MIDDLE SECTION OF THE APP WITH THE MAPS
 row2_1, row2_2 = st.columns((2, 1))
