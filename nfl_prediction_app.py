@@ -52,7 +52,7 @@ team_stadiums = pd.read_csv('nfl_team_stadiums.csv')
 nfl = scores.join(stadiums.set_index('stadium_name'), on='stadium')
 nfl_combined = nfl.join(team_stadiums.set_index('visitor_team'), on='team_away')
 
-gather_data = nfl_combined.loc[1,4]
+gather_data = nfl_combined.iloc[1]
 ##gather_data = nfl_combined[nfl_combined.schedule_season >= year] 
 ##gather_data = nfl_combined[nfl_combined.schedule_week >= week] 
      
