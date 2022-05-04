@@ -52,11 +52,11 @@ team_stadiums = pd.read_csv('nfl_team_stadiums.csv')
 nfl = scores.join(stadiums.set_index('stadium_name'), on='stadium')
 nfl_combined = nfl.join(team_stadiums.set_index('visitor_team'), on='team_away')
 
-gather_data = nfl_combined[1,4]
+gather_data = nfl_combined.loc[1,4]
 ##gather_data = nfl_combined[nfl_combined.schedule_season >= year] 
 ##gather_data = nfl_combined[nfl_combined.schedule_week >= week] 
      
-# LAYING OUT THE MIDDLE SECTION OF THE APP WITH THE MAPS
+# LAYING OUT THE 'GATHER' OF THE APP WITH THE MAPS
 row2_1, row2_2 = st.columns((2, 1))
 
 
@@ -72,7 +72,20 @@ with row2_2:
     if clicked:
      st.write('Getting bets!')
 
+# LAYING OUT THE 'Evaluation' OF THE APP WITH THE MAPS
+row3_1, row3_2 = st.columns((2, 1))
 
+
+with row3_1:
+    st.write(
+        "**Here's the tradespace**"
+    )
+
+
+with row3_2:
+  st.write(
+        "**Here are the recommendations**"
+    )
 
 with st.spinner('Wait for it...'):
     output = 'hello world!'
