@@ -134,12 +134,11 @@ y_pred=model.predict(x_test)
 print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
 
 feature_imp = pd.Series(model.feature_importances_,index=x.columns.values).sort_values(ascending=False)
-feature_imp
 
 
 #Source: datacamp random forest "Finding Important Features in Scikit-learn"
 
-%matplotlib inline
+#%matplotlib inline
 # Creating a bar plot
 sns.barplot(x=feature_imp, y=feature_imp.index)
 # Add labels to your graph
