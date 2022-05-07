@@ -271,12 +271,6 @@ with row4_1:
         "**Post poll on Reddit**"
     )
 
-fig2 = plt.figure()
-ax = fig2.add_axes([0,0,1,1])
-teams = best_bets['team_home']
-bet = best_bets['bet_percentage_home']
-ax.bar(teams,bet)
-plt.show()
 
 with row4_2:
   st.write(
@@ -285,7 +279,7 @@ with row4_2:
   clicked = st.button("Get my final recommendation!")
   if clicked:
    st.write('Getting pick!')
-   st.pyplot(fig2)
+   st.bar_chart(best_bets[['team_home','bet_percentage_home']])
 
 with st.spinner('Wait for it...'):
     output = 'hello world!'
