@@ -3,7 +3,6 @@ pandas
 streamlit
 numpy
 streamlit
-time
 geopy.distance
 sklearn
 matplotlib
