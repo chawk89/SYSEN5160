@@ -248,6 +248,7 @@ plt.show()
 with row3_1:
     st.write(
         "**Here's the tradespace**"
+    st.pyplot(f)
       
     )
 
