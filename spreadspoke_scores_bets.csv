@@ -12946,70 +12946,70 @@ schedule_date,schedule_season,schedule_week,schedule_playoff,team_home,score_hom
 1/24/21,2020,Conference,TRUE,Green Bay Packers,26,31,Tampa Bay Buccaneers,GB,-3,53,Lambeau Field,FALSE,,,,,,,,
 1/24/21,2020,Conference,TRUE,Kansas City Chiefs,38,24,Buffalo Bills,KC,-3,55,Arrowhead Stadium,FALSE,,,,,,,,
 2/7/21,2020,Superbowl,TRUE,Tampa Bay Buccaneers,31,9,Kansas City Chiefs,KC,-3,54.5,Raymond James Stadium,FALSE,63,9,78,,,,,
-9/12/21,2021,1,FALSE,Atlanta Falcons,6,32,Philadelphia Eagles,ATL,-3.5,48,Mercedes-Benz Stadium,FALSE,72,0,,DOME,-190,160,8%,52%
-9/12/21,2021,1,FALSE,Buffalo Bills,16,23,Pittsburgh Steelers,BUF,-6.5,48.5,Highmark Stadium,FALSE,,,,,-290,230,43%,78%
-9/12/21,2021,1,FALSE,Carolina Panthers,19,14,New York Jets,CAR,-5,44.5,Bank of America Stadium,FALSE,,,,,-200,170,40%,79%
-9/12/21,2021,1,FALSE,Cincinnati Bengals,27,24,Minnesota Vikings,MIN,-3,48,Paul Brown Stadium,FALSE,,,,,145,-165,54%,32%
-9/12/21,2021,1,FALSE,Detroit Lions,33,41,San Francisco 49ers,SF,-7.5,46,Ford Field,FALSE,72,0,,DOME,280,-365,17%,10%
-9/12/21,2021,1,FALSE,Houston Texans,37,21,Jacksonville Jaguars,JAX,-3,44.5,NRG Stadium,FALSE,72,0,,DOME,155,-180,61%,31%
-9/12/21,2021,1,FALSE,Indianapolis Colts,16,28,Seattle Seahawks,SEA,-2.5,48.5,Lucas Oil Stadium,FALSE,72,0,,DOME,125,-145,29%,25%
-9/12/21,2021,1,FALSE,Kansas City Chiefs,33,29,Cleveland Browns,KC,-6,53,Arrowhead Stadium,FALSE,,,,,-255,205,67%,86%
-9/13/21,2021,1,FALSE,Las Vegas Raiders,33,27,Baltimore Ravens,BAL,-4.5,51,Allegiant Stadium,FALSE,,,,,170,-200,43%,20%
-9/12/21,2021,1,FALSE,Los Angeles Rams,34,14,Chicago Bears,LAR,-7.5,44.5,SoFi Stadium,FALSE,72,0,,DOME,-435,330,52%,87%
-9/12/21,2021,1,FALSE,New England Patriots,16,17,Miami Dolphins,NE,-2.5,44.5,Gillette Stadium,FALSE,,,,,-190,160,22%,13%
-9/12/21,2021,1,FALSE,New Orleans Saints,38,3,Green Bay Packers,GB,-4,49.5,TIAA Bank Field,TRUE,,,,,160,-190,22%,13%
-9/12/21,2021,1,FALSE,New York Giants,13,27,Denver Broncos,DEN,-2.5,42.5,MetLife Stadium,FALSE,,,,,140,-160,67%,39%
+9/12/21,2021,1,FALSE,Atlanta Falcons,6,32,Philadelphia Eagles,ATL,-3.5,48,Mercedes-Benz Stadium,FALSE,72,0,,DOME,-190,160,0.08,0.52
+9/12/21,2021,1,FALSE,Buffalo Bills,16,23,Pittsburgh Steelers,BUF,-6.5,48.5,Highmark Stadium,FALSE,,,,,-290,230,0.43,0.78
+9/12/21,2021,1,FALSE,Carolina Panthers,19,14,New York Jets,CAR,-5,44.5,Bank of America Stadium,FALSE,,,,,-200,170,0.40,0.79
+9/12/21,2021,1,FALSE,Cincinnati Bengals,27,24,Minnesota Vikings,MIN,-3,48,Paul Brown Stadium,FALSE,,,,,145,-165,0.54,0.32
+9/12/21,2021,1,FALSE,Detroit Lions,33,41,San Francisco 49ers,SF,-7.5,46,Ford Field,FALSE,72,0,,DOME,280,-365,0.17,0.10
+9/12/21,2021,1,FALSE,Houston Texans,37,21,Jacksonville Jaguars,JAX,-3,44.5,NRG Stadium,FALSE,72,0,,DOME,155,-180,0.61,0.31
+9/12/21,2021,1,FALSE,Indianapolis Colts,16,28,Seattle Seahawks,SEA,-2.5,48.5,Lucas Oil Stadium,FALSE,72,0,,DOME,125,-145,0.29,0.25
+9/12/21,2021,1,FALSE,Kansas City Chiefs,33,29,Cleveland Browns,KC,-6,53,Arrowhead Stadium,FALSE,,,,,-255,205,0.67,0.86
+9/13/21,2021,1,FALSE,Las Vegas Raiders,33,27,Baltimore Ravens,BAL,-4.5,51,Allegiant Stadium,FALSE,,,,,170,-200,0.43,0.20
+9/12/21,2021,1,FALSE,Los Angeles Rams,34,14,Chicago Bears,LAR,-7.5,44.5,SoFi Stadium,FALSE,72,0,,DOME,-435,330,0.52,0.87
+9/12/21,2021,1,FALSE,New England Patriots,16,17,Miami Dolphins,NE,-2.5,44.5,Gillette Stadium,FALSE,,,,,-190,160,0.22,0.13
+9/12/21,2021,1,FALSE,New Orleans Saints,38,3,Green Bay Packers,GB,-4,49.5,TIAA Bank Field,TRUE,,,,,160,-190,0.22,0.13
+9/12/21,2021,1,FALSE,New York Giants,13,27,Denver Broncos,DEN,-2.5,42.5,MetLife Stadium,FALSE,,,,,140,-160,0.67,0.39
 9/9/21,2021,1,FALSE,Tampa Bay Buccaneers,31,29,Dallas Cowboys,TB,-7.5,51.5,Raymond James Stadium,FALSE,,,,,-450,350,,
-9/12/21,2021,1,FALSE,Tennessee Titans,13,38,Arizona Cardinals,TEN,-3,51.5,Nissan Stadium,FALSE,,,,,-155,135,44%,68%
-9/12/21,2021,1,FALSE,Washington Football Team,16,20,Los Angeles Chargers,LAC,-1,44.5,FedEx Field,FALSE,,,,,-130,110,45%,46%
-9/19/21,2021,2,FALSE,Arizona Cardinals,34,33,Minnesota Vikings,ARI,-4,51,University of Phoenix Stadium,FALSE,72,0,,DOME,-200,170,76%,87%
-9/19/21,2021,2,FALSE,Baltimore Ravens,36,35,Kansas City Chiefs,KC,-4,55.5,M&T Bank Stadium,FALSE,,,,,170,-200,22%,12%
-9/19/21,2021,2,FALSE,Carolina Panthers,26,7,New Orleans Saints,NO,-3.5,44,Bank of America Stadium,FALSE,,,,,160,-190,51%,20%
-9/19/21,2021,2,FALSE,Chicago Bears,20,17,Cincinnati Bengals,CHI,-3,45,Soldier Field,FALSE,,,,,-140,120,14%,24%
-9/19/21,2021,2,FALSE,Cleveland Browns,31,21,Houston Texans,CLE,-12.5,48,FirstEnergy Stadium,FALSE,,,,,-650,460,76%,85%
-9/20/21,2021,2,FALSE,Green Bay Packers,35,17,Detroit Lions,GB,-10.5,48,Lambeau Field,FALSE,,,,,-575,410,34%,77%
-9/19/21,2021,2,FALSE,Indianapolis Colts,24,27,Los Angeles Rams,LAR,-4,47.5,Lucas Oil Stadium,FALSE,72,0,,DOME,160,-190,18%,14%
-9/19/21,2021,2,FALSE,Jacksonville Jaguars,13,23,Denver Broncos,DEN,-6,45.5,TIAA Bank Field,FALSE,,,,,230,-290,27%,18%
-9/19/21,2021,2,FALSE,Los Angeles Chargers,17,20,Dallas Cowboys,LAC,-3,55,SoFi Stadium,FALSE,72,0,,DOME,-190,160,6%,16%
-9/19/21,2021,2,FALSE,Miami Dolphins,0,35,Buffalo Bills,BUF,-3,48,Hard Rock Stadium,FALSE,,,,,150,-170,28%,18%
-9/19/21,2021,2,FALSE,New York Jets,6,25,New England Patriots,NE,-5.5,42.5,MetLife Stadium,FALSE,,,,,195,-240,29%,12%
-9/19/21,2021,2,FALSE,Philadelphia Eagles,11,17,San Francisco 49ers,SF,-3.5,50,Lincoln Financial Field,FALSE,,,,,135,-155,68%,46%
-9/19/21,2021,2,FALSE,Pittsburgh Steelers,17,26,Las Vegas Raiders,PIT,-6,47.5,Heinz Field,FALSE,,,,,-280,225,38%,66%
-9/19/21,2021,2,FALSE,Seattle Seahawks,30,33,Tennessee Titans,SEA,-5.5,54,Lumen Field,FALSE,,,,,-335,260,41%,73%
-9/19/21,2021,2,FALSE,Tampa Bay Buccaneers,48,25,Atlanta Falcons,TB,-12.5,52,Raymond James Stadium,FALSE,,,,,-800,550,68%,92%
+9/12/21,2021,1,FALSE,Tennessee Titans,13,38,Arizona Cardinals,TEN,-3,51.5,Nissan Stadium,FALSE,,,,,-155,135,0.44,0.68
+9/12/21,2021,1,FALSE,Washington Football Team,16,20,Los Angeles Chargers,LAC,-1,44.5,FedEx Field,FALSE,,,,,-130,110,0.45,0.46
+9/19/21,2021,2,FALSE,Arizona Cardinals,34,33,Minnesota Vikings,ARI,-4,51,University of Phoenix Stadium,FALSE,72,0,,DOME,-200,170,0.76,0.87
+9/19/21,2021,2,FALSE,Baltimore Ravens,36,35,Kansas City Chiefs,KC,-4,55.5,M&T Bank Stadium,FALSE,,,,,170,-200,0.22,0.12
+9/19/21,2021,2,FALSE,Carolina Panthers,26,7,New Orleans Saints,NO,-3.5,44,Bank of America Stadium,FALSE,,,,,160,-190,0.51,0.20
+9/19/21,2021,2,FALSE,Chicago Bears,20,17,Cincinnati Bengals,CHI,-3,45,Soldier Field,FALSE,,,,,-140,120,0.14,0.24
+9/19/21,2021,2,FALSE,Cleveland Browns,31,21,Houston Texans,CLE,-12.5,48,FirstEnergy Stadium,FALSE,,,,,-650,460,0.76,0.85
+9/20/21,2021,2,FALSE,Green Bay Packers,35,17,Detroit Lions,GB,-10.5,48,Lambeau Field,FALSE,,,,,-575,410,0.34,0.77
+9/19/21,2021,2,FALSE,Indianapolis Colts,24,27,Los Angeles Rams,LAR,-4,47.5,Lucas Oil Stadium,FALSE,72,0,,DOME,160,-190,0.18,0.14
+9/19/21,2021,2,FALSE,Jacksonville Jaguars,13,23,Denver Broncos,DEN,-6,45.5,TIAA Bank Field,FALSE,,,,,230,-290,0.27,0.18
+9/19/21,2021,2,FALSE,Los Angeles Chargers,17,20,Dallas Cowboys,LAC,-3,55,SoFi Stadium,FALSE,72,0,,DOME,-190,160,0.06,0.16
+9/19/21,2021,2,FALSE,Miami Dolphins,0,35,Buffalo Bills,BUF,-3,48,Hard Rock Stadium,FALSE,,,,,150,-170,0.28,0.18
+9/19/21,2021,2,FALSE,New York Jets,6,25,New England Patriots,NE,-5.5,42.5,MetLife Stadium,FALSE,,,,,195,-240,0.29,0.12
+9/19/21,2021,2,FALSE,Philadelphia Eagles,11,17,San Francisco 49ers,SF,-3.5,50,Lincoln Financial Field,FALSE,,,,,135,-155,0.68,0.46
+9/19/21,2021,2,FALSE,Pittsburgh Steelers,17,26,Las Vegas Raiders,PIT,-6,47.5,Heinz Field,FALSE,,,,,-280,225,0.38,0.66
+9/19/21,2021,2,FALSE,Seattle Seahawks,30,33,Tennessee Titans,SEA,-5.5,54,Lumen Field,FALSE,,,,,-335,260,0.41,0.73
+9/19/21,2021,2,FALSE,Tampa Bay Buccaneers,48,25,Atlanta Falcons,TB,-12.5,52,Raymond James Stadium,FALSE,,,,,-800,550,0.68,0.92
 9/16/21,2021,2,FALSE,Washington Football Team,30,29,New York Giants,WAS,-3,41,FedEx Field,FALSE,,,,,,,,
 9/23/21,2021,3,FALSE,Houston Texans,9,24,Carolina Panthers,CAR,-8,43,NRG Stadium,FALSE,72,0,,DOME,,,,
-9/26/21,2021,3,FALSE,Buffalo Bills,43,21,Washington Football Team,BUF,-7,45.5,Highmark Stadium,FALSE,,,,,-380,290,81%,93%
-9/26/21,2021,3,FALSE,Cleveland Browns,26,6,Chicago Bears,CLE,-7.5,45,FirstEnergy Stadium,FALSE,,,,,-310,245,50%,75%
-9/26/21,2021,3,FALSE,Denver Broncos,26,0,New York Jets,DEN,-10,41.5,Empower Field at Mile High,FALSE,,,,,-590,425,76%,94%
-9/26/21,2021,3,FALSE,Detroit Lions,17,19,Baltimore Ravens,BAL,-7.5,51,Ford Field,FALSE,72,0,,DOME,330,-435,35%,5%
-9/26/21,2021,3,FALSE,Jacksonville Jaguars,19,31,Arizona Cardinals,ARI,-8,51.5,TIAA Bank Field,FALSE,,,,,290,-380,13%,4%
-9/26/21,2021,3,FALSE,Kansas City Chiefs,24,30,Los Angeles Chargers,KC,-7,55,Arrowhead Stadium,FALSE,,,,,-320,250,77%,92%
-9/26/21,2021,3,FALSE,Las Vegas Raiders,31,28,Miami Dolphins,LVR,-3.5,45,Allegiant Stadium,FALSE,,,,,-210,175,88%,93%
-9/26/21,2021,3,FALSE,Los Angeles Rams,34,24,Tampa Bay Buccaneers,TB,-1,55,SoFi Stadium,FALSE,72,0,,DOME,105,-125,25%,34%
-9/26/21,2021,3,FALSE,Minnesota Vikings,30,17,Seattle Seahawks,SEA,-2,54,U.S. Bank Stadium,FALSE,72,0,,DOME,105,-125,48%,31%
-9/26/21,2021,3,FALSE,New England Patriots,13,28,New Orleans Saints,NE,-3,43.5,Gillette Stadium,FALSE,,,,,-160,140,34%,35%
-9/26/21,2021,3,FALSE,New York Giants,14,17,Atlanta Falcons,NYG,-2.5,48,MetLife Stadium,FALSE,,,,,-150,130,31%,49%
-9/26/21,2021,3,FALSE,Pittsburgh Steelers,10,24,Cincinnati Bengals,PIT,-2.5,42.5,Heinz Field,FALSE,,,,,-180,155,44%,67%
-9/26/21,2021,3,FALSE,San Francisco 49ers,28,30,Green Bay Packers,SF,-3,50.5,Levi's Stadium,FALSE,,,,,-180,155,24%,23%
-9/26/21,2021,3,FALSE,Tennessee Titans,25,16,Indianapolis Colts,TEN,-5,47,Nissan Stadium,FALSE,,,,,-255,205,83%,89%
-9/27/21,2021,3,FALSE,Dallas Cowboys,41,21,Philadelphia Eagles,DAL,-3.5,51.5,AT&T Stadium,FALSE,72,0,,DOME,-190,160,41%,69%
+9/26/21,2021,3,FALSE,Buffalo Bills,43,21,Washington Football Team,BUF,-7,45.5,Highmark Stadium,FALSE,,,,,-380,290,0.81,0.93
+9/26/21,2021,3,FALSE,Cleveland Browns,26,6,Chicago Bears,CLE,-7.5,45,FirstEnergy Stadium,FALSE,,,,,-310,245,0.50,0.75
+9/26/21,2021,3,FALSE,Denver Broncos,26,0,New York Jets,DEN,-10,41.5,Empower Field at Mile High,FALSE,,,,,-590,425,0.76,0.94
+9/26/21,2021,3,FALSE,Detroit Lions,17,19,Baltimore Ravens,BAL,-7.5,51,Ford Field,FALSE,72,0,,DOME,330,-435,0.35,0.05
+9/26/21,2021,3,FALSE,Jacksonville Jaguars,19,31,Arizona Cardinals,ARI,-8,51.5,TIAA Bank Field,FALSE,,,,,290,-380,0.13,0.04
+9/26/21,2021,3,FALSE,Kansas City Chiefs,24,30,Los Angeles Chargers,KC,-7,55,Arrowhead Stadium,FALSE,,,,,-320,250,0.77,0.92
+9/26/21,2021,3,FALSE,Las Vegas Raiders,31,28,Miami Dolphins,LVR,-3.5,45,Allegiant Stadium,FALSE,,,,,-210,175,0.88,0.93
+9/26/21,2021,3,FALSE,Los Angeles Rams,34,24,Tampa Bay Buccaneers,TB,-1,55,SoFi Stadium,FALSE,72,0,,DOME,105,-125,0.25,0.34
+9/26/21,2021,3,FALSE,Minnesota Vikings,30,17,Seattle Seahawks,SEA,-2,54,U.S. Bank Stadium,FALSE,72,0,,DOME,105,-125,0.48,0.31
+9/26/21,2021,3,FALSE,New England Patriots,13,28,New Orleans Saints,NE,-3,43.5,Gillette Stadium,FALSE,,,,,-160,140,0.34,0.35
+9/26/21,2021,3,FALSE,New York Giants,14,17,Atlanta Falcons,NYG,-2.5,48,MetLife Stadium,FALSE,,,,,-150,130,0.31,0.49
+9/26/21,2021,3,FALSE,Pittsburgh Steelers,10,24,Cincinnati Bengals,PIT,-2.5,42.5,Heinz Field,FALSE,,,,,-180,155,0.44,0.67
+9/26/21,2021,3,FALSE,San Francisco 49ers,28,30,Green Bay Packers,SF,-3,50.5,Levi's Stadium,FALSE,,,,,-180,155,0.24,0.23
+9/26/21,2021,3,FALSE,Tennessee Titans,25,16,Indianapolis Colts,TEN,-5,47,Nissan Stadium,FALSE,,,,,-255,205,0.83,0.89
+9/27/21,2021,3,FALSE,Dallas Cowboys,41,21,Philadelphia Eagles,DAL,-3.5,51.5,AT&T Stadium,FALSE,72,0,,DOME,-190,160,0.41,0.69
 9/30/21,2021,4,FALSE,Cincinnati Bengals,24,21,Jacksonville Jaguars,CIN,-7.5,46,Paul Brown Stadium,FALSE,,,,,,,,
-10/3/21,2021,4,FALSE,Atlanta Falcons,30,34,Washington Football Team,WAS,-2,47.5,Mercedes-Benz Stadium,FALSE,72,0,,DOME,105,-125,45%,47%
-10/3/21,2021,4,FALSE,Buffalo Bills,40,0,Houston Texans,BUF,-19,47.5,Highmark Stadium,FALSE,,,,,-1600,900,76%,93%
-10/3/21,2021,4,FALSE,Chicago Bears,24,14,Detroit Lions,CHI,-3,41.5,Soldier Field,FALSE,,,,,-150,130,34%,28%
-10/3/21,2021,4,FALSE,Dallas Cowboys,36,28,Carolina Panthers,DAL,-4.5,51.5,AT&T Stadium,FALSE,72,0,,DOME,-200,170,75%,73%
-10/3/21,2021,4,FALSE,Denver Broncos,7,23,Baltimore Ravens,DEN,-1,44,Empower Field at Mile High,FALSE,,,,,100,-120,27%,25%
-10/3/21,2021,4,FALSE,Green Bay Packers,27,17,Pittsburgh Steelers,GB,-6,45,Lambeau Field,FALSE,,,,,-275,220,90%,92%
-10/3/21,2021,4,FALSE,Los Angeles Rams,20,37,Arizona Cardinals,LAR,-4,54,SoFi Stadium,FALSE,72,0,,DOME,-210,175,47%,72%
-10/3/21,2021,4,FALSE,Miami Dolphins,17,27,Indianapolis Colts,MIA,-2.5,41.5,Hard Rock Stadium,FALSE,,,,,-135,115,22%,35%
-10/3/21,2021,4,FALSE,Minnesota Vikings,7,14,Cleveland Browns,CLE,-1,52,U.S. Bank Stadium,FALSE,72,0,,DOME,100,-120,50%,47%
-10/3/21,2021,4,FALSE,New England Patriots,17,19,Tampa Bay Buccaneers,TB,-6.5,49,Gillette Stadium,FALSE,,,,,230,-290,5%,4%
-10/3/21,2021,4,FALSE,New Orleans Saints,21,27,New York Giants,NO,-7,42.5,Caesars Superdome,FALSE,72,0,,DOME,-335,260,88%,89%
-10/3/21,2021,4,FALSE,New York Jets,27,24,Tennessee Titans,TEN,-6,44.5,MetLife Stadium,FALSE,,,,,200,-250,4%,5%
-10/3/21,2021,4,FALSE,Philadelphia Eagles,30,42,Kansas City Chiefs,KC,-7,54,Lincoln Financial Field,FALSE,,,,,260,-335,4%,4%
-10/3/21,2021,4,FALSE,San Francisco 49ers,21,28,Seattle Seahawks,SF,-2.5,52,Levi's Stadium,FALSE,,,,,-130,110,15%,32%
-10/4/21,2021,4,FALSE,Los Angeles Chargers,28,14,Las Vegas Raiders,LAC,-3,51.5,SoFi Stadium,FALSE,72,0,,DOME,-170,150,29%,53%
+10/3/21,2021,4,FALSE,Atlanta Falcons,30,34,Washington Football Team,WAS,-2,47.5,Mercedes-Benz Stadium,FALSE,72,0,,DOME,105,-125,0.45,0.47
+10/3/21,2021,4,FALSE,Buffalo Bills,40,0,Houston Texans,BUF,-19,47.5,Highmark Stadium,FALSE,,,,,-1600,900,0.76,0.93
+10/3/21,2021,4,FALSE,Chicago Bears,24,14,Detroit Lions,CHI,-3,41.5,Soldier Field,FALSE,,,,,-150,130,0.34,0.28
+10/3/21,2021,4,FALSE,Dallas Cowboys,36,28,Carolina Panthers,DAL,-4.5,51.5,AT&T Stadium,FALSE,72,0,,DOME,-200,170,0.75,0.73
+10/3/21,2021,4,FALSE,Denver Broncos,7,23,Baltimore Ravens,DEN,-1,44,Empower Field at Mile High,FALSE,,,,,100,-120,0.27,0.25
+10/3/21,2021,4,FALSE,Green Bay Packers,27,17,Pittsburgh Steelers,GB,-6,45,Lambeau Field,FALSE,,,,,-275,220,0.90,0.92
+10/3/21,2021,4,FALSE,Los Angeles Rams,20,37,Arizona Cardinals,LAR,-4,54,SoFi Stadium,FALSE,72,0,,DOME,-210,175,0.47,0.72
+10/3/21,2021,4,FALSE,Miami Dolphins,17,27,Indianapolis Colts,MIA,-2.5,41.5,Hard Rock Stadium,FALSE,,,,,-135,115,0.22,0.35
+10/3/21,2021,4,FALSE,Minnesota Vikings,7,14,Cleveland Browns,CLE,-1,52,U.S. Bank Stadium,FALSE,72,0,,DOME,100,-120,0.50,0.47
+10/3/21,2021,4,FALSE,New England Patriots,17,19,Tampa Bay Buccaneers,TB,-6.5,49,Gillette Stadium,FALSE,,,,,230,-290,0.05,0.04
+10/3/21,2021,4,FALSE,New Orleans Saints,21,27,New York Giants,NO,-7,42.5,Caesars Superdome,FALSE,72,0,,DOME,-335,260,0.88,0.89
+10/3/21,2021,4,FALSE,New York Jets,27,24,Tennessee Titans,TEN,-6,44.5,MetLife Stadium,FALSE,,,,,200,-250,0.04,0.05
+10/3/21,2021,4,FALSE,Philadelphia Eagles,30,42,Kansas City Chiefs,KC,-7,54,Lincoln Financial Field,FALSE,,,,,260,-335,0.04,0.04
+10/3/21,2021,4,FALSE,San Francisco 49ers,21,28,Seattle Seahawks,SF,-2.5,52,Levi's Stadium,FALSE,,,,,-130,110,0.15,0.32
+10/4/21,2021,4,FALSE,Los Angeles Chargers,28,14,Las Vegas Raiders,LAC,-3,51.5,SoFi Stadium,FALSE,72,0,,DOME,-170,150,0.29,0.53
 10/7/21,2021,5,FALSE,Seattle Seahawks,17,26,Los Angeles Rams,LAR,-2.5,53.5,Lumen Field,FALSE,,,,,,,,
 10/10/21,2021,5,FALSE,Arizona Cardinals,17,10,San Francisco 49ers,ARI,-6,48.5,State Farm Stadium,FALSE,72,0,,DOME,,,,
 10/10/21,2021,5,FALSE,Atlanta Falcons,27,20,New York Jets,ATL,-3,45.5,Tottenham Hotspur Stadium,TRUE,,,,,,,,
