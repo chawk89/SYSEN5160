@@ -157,8 +157,7 @@ plt.show()
 
 
 current = nfl_final.loc[(nfl_final.schedule_season == year) & (nfl_final.schedule_week == week)]
-abbreviated_current = current['schedule_season','schedule_week','team_home','team_away','predicted_point_diff']
-     
+
 # LAYING OUT THE 'GATHER' OF THE APP 
 row2_1, row2_2 = st.columns((2, 1))
 
@@ -167,7 +166,7 @@ with row2_1:
     st.write(
         f"""**All NFL Games from {year} & Week: {week}**"""
     )
-    st.table(abbreviated_current)
+    st.table(current[['schedule_season','schedule_week','team_home','team_away','predicted_point_diff']])
 
 with row2_2:
     st.write("**Gather Insights**")
