@@ -278,9 +278,9 @@ with row4_2:
     )
   clicked = st.button("Get my final recommendation!")
   #pick = best_bets[best_bets['handle_percentage_home'] == str(best_bets.handle_percentage_home.max())]
-  st.table(best_bets)   
+  
   if clicked:
-   st.table(best_bets[['team_home','win_probability']])
+   st.dataframe(best_bets)
    #st.write('**The crowd favorite is: {pick}!**')
 
 with st.spinner('Wait for it...'):
