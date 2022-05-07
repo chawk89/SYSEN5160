@@ -1,7 +1,6 @@
 #foobar
 import streamlit as st
 import pandas as pd
-import time
 from geopy.distance import geodesic
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
