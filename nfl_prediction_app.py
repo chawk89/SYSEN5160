@@ -280,7 +280,7 @@ with row4_2:
   #pick = best_bets[best_bets['handle_percentage_home'] == str(best_bets.handle_percentage_home.max())]
      
   if clicked:
-   st.table(best_bets[['team_home','bet_percentage_home','handle_percentage_home']])
+   st.table(best_bets['bet_percentage_home'])
    #st.write('**The crowd favorite is: {pick}!**')
 
 with st.spinner('Wait for it...'):
