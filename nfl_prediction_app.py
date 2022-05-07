@@ -158,7 +158,7 @@ plt.show()
 
 current = nfl_final.loc[(nfl_final.schedule_season == year) & (nfl_final.schedule_week == week)]
 
-# LAYING OUT THE 'GATHER' OF THE APP 
+#>>>>>>> LAYING OUT THE 'GATHER Data' (Top Row) OF THE APP <<<<<<<<<<<
 row2_1, row2_2 = st.columns((2, 1))
 
 
@@ -175,7 +175,7 @@ with row2_2:
      st.write('Getting bets!')
 
 
-# LAYING OUT THE 'Picks' OF THE APP
+#>>> LAYING OUT THE 'Evaluation' ROW OF THE APP <<<<<
 row3_1, row3_2 = st.columns((1, 2))
 
 current_predict = current[['altitude_advantage',  'travel_advantage','weather_wind_mph', 'weather_humidity', 'predicted_point_diff']]
@@ -240,9 +240,7 @@ axs[0].axvline(x = 0.5, color = 'b', label = 'Probability Threshold')
 axs[0].set_ylabel("Risk")
 axs[0].set_title("Red Teams are Pareto Optimal")
 
-axs[1].barh(feature_imp, feature_imp.index, align='center')
-#axs[1].set_xlim([0, 15])
-#axs[1].set_ylim([0, 5e-3])
+axs[1].bar(feature_imp, feature_imp.index)
 axs[1].set_xlabel("Feature Importance Score")
 axs[1].set_ylabel("Features")
 axs[1].set_title("Top Factors of Win Probability")
@@ -264,8 +262,8 @@ with row3_2:
   if clicked:
           st.table(best_bets[['team_home','win_probability','moneyline_home']]) 
 
-# LAYING OUT THE 'Evaluation' OF THE APP WITH THE MAPS
-row4_1, row4_2 = st.columns((1, 1))
+#>>>> LAYING OUT THE 'RECOMMNEDATIONS' ROW OF THE APP <<<<<<
+row4_1, row4_2 = st.columns((1, 2))
 
 
 with row4_1:
