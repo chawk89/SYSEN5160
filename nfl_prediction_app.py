@@ -278,7 +278,7 @@ with row4_2:
     )
   clicked = st.button("Get my final recommendation!")
   if clicked:
-   pick = best_bets.loc[best_bets['handle_percentage_home'] == best_bets.handle_percentage_home.max()]
+   pick = best_bets[best_bets['handle_percentage_home'] == best_bets.handle_percentage_home.max()]
    st.table(best_bets[['team_home','bet_percentage_home','handle_percentage_home']])
    st.write('**The crowd favorite is: {pick}!**')
 
