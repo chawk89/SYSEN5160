@@ -285,6 +285,6 @@ with row4_2:
   
   if clicked:
    st.dataframe(best_bets[['team_home','bet_percentage_home','handle_percentage_home']])
-   st.write(f"""**The crowd favorite is: {pick}!**""")
+   st.write(pick)
    st.balloons()
 
