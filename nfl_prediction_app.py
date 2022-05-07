@@ -236,13 +236,16 @@ axs[0].scatter(win_prob_nondominated, risk_nondominated, c='r',marker="o")
 #axs[0].set_xlim([0, 15])
 #axs[0].set_ylim([0, 5e-3])
 axs[0].set_xlabel("Win_prob")
+axs[0].axvline(x = 0.5, color = 'b', label = 'Probability Threshold')
 axs[0].set_ylabel("Risk")
+axs[0].set_title("Red Teams are Pareto Optimal")
 
-axs[1].bar(feature_imp, feature_imp.index)
+axs[1].barh(feature_imp, feature_imp.index, align='center')
 #axs[1].set_xlim([0, 15])
 #axs[1].set_ylim([0, 5e-3])
 axs[1].set_xlabel("Feature Importance Score")
 axs[1].set_ylabel("Features")
+axs[1].set_title("Top Factors of Win Probability")
 
 plt.tight_layout() 
 plt.show()
@@ -262,7 +265,7 @@ with row3_2:
           st.table(best_bets[['team_home','win_probability','moneyline_home']]) 
 
 # LAYING OUT THE 'Evaluation' OF THE APP WITH THE MAPS
-row4_1, row4_2 = st.columns((2, 1))
+row4_1, row4_2 = st.columns((1, 1))
 
 
 with row4_1:
