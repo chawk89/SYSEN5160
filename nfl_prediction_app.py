@@ -176,7 +176,7 @@ with row2_2:
 
 
 # LAYING OUT THE 'Picks' OF THE APP
-row3_1, row3_2 = st.columns((2, 1))
+row3_1, row3_2 = st.columns((1, 2))
 
 current_predict = current[['altitude_advantage',  'travel_advantage','weather_wind_mph', 'weather_humidity', 'predicted_point_diff']]
 predictions = model.predict_proba(current_predict)
@@ -285,6 +285,6 @@ with row4_2:
   
   if clicked:
    st.dataframe(best_bets[['team_home','bet_percentage_home','handle_percentage_home']])
-   st.write(pick)
-   st.balloons()
+   st.write(pick['team_home'])
+   #st.balloons()
 
