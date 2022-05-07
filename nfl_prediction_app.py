@@ -227,6 +227,8 @@ risk_dominated = current['moneyline_home'].loc[current['non-dominated'] == 0]
 win_prob_nondominated = current['win_probability'].loc[current['non-dominated'] == 1]
 risk_nondominated = current['moneyline_home'].loc[current['non-dominated'] == 1]
 
+best_bets = current.loc[(current['non-dominated'] == 1) & (current['win_probability'] >= 0.5)]
+
 fig, axs = plt.subplots(2,figsize=(6,9)) 
 
 axs[0].scatter(win_prob_dominated, risk_dominated, c='b')
@@ -257,6 +259,8 @@ with row3_2:
   st.write(
         "**Here are the recommendations**"
     )
+  if clicked:
+          st.table(best_bets[['team_home','win_probability']]) 
 
 # LAYING OUT THE 'Evaluation' OF THE APP WITH THE MAPS
 row4_1, row4_2 = st.columns((2, 1))
