@@ -278,8 +278,9 @@ with row4_2:
     )
   clicked = st.button("Get my final recommendation!")
   if clicked:
-   st.write('Getting pick!')
-   st.bar_chart(best_bets[['team_home','bet_percentage_home']])
+   pick = best_bets.loc[best_bets['handle_percentage_home'] == best_bets.handle_percentage_home.max()]
+   st.table(best_bets[['team_home','bet_percentage_home','handle_percentage_home']])
+   st.write('**The crowd favorite is: {pick}!**')
 
 with st.spinner('Wait for it...'):
     output = 'hello world!'
