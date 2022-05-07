@@ -2,7 +2,15 @@
 import streamlit as st
 import pandas as pd
 import time
-import pandas as pd
+from geopy.distance import geodesic
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn import metrics
+from matplotlib import rcParams
+import matplotlib.pyplot as plt
+from matplotlib import rcParams
+import seaborn as sns
+import numpy as np
 
 st.set_page_config(
      page_title="NFL Game Predictor App",
