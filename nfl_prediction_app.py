@@ -228,7 +228,7 @@ risk_dominated = current['moneyline_home'].loc[current['non-dominated'] == 0]
 win_prob_nondominated = current['win_probability'].loc[current['non-dominated'] == 1]
 risk_nondominated = current['moneyline_home'].loc[current['non-dominated'] == 1]
 
-f, axs = plt.subplots(2,figsize=(6,9)) 
+fig, axs = plt.subplots(2,figsize=(6,9)) 
 
 
 axs[0].scatter(win_prob_dominated, risk_dominated, c='b')
@@ -250,11 +250,9 @@ plt.show()
 
 with row3_1:
     st.write(
-        "**Here's the tradespace**"
-    st.pyplot(f)
-      
+        "**Here's the tradespace**"   
     )
-
+    st.pyplot(fig)
 
 
 with row3_2:
