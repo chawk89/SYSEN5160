@@ -280,16 +280,11 @@ with row4_2:
         "**Get wisdom of the crowd through betting trends**"
     )
   clicked = st.button("Get my final recommendation!")
-  pick = best_bets[best_bets['handle_percentage_home'] == best_bets.handle_percentage_home.max()]
-  if best_bets.handle_percentage_home.min() == 0:
-          pick2 = best_bets[best_bets['handle_percentage_home'] == 0]
+  pick = best_bets.loc[best_bets['handle_percentage_home'] == best_bets.handle_percentage_home.max()]
+
   
   if clicked:
    st.dataframe(best_bets[['team_home','bet_percentage_home','handle_percentage_home']])
-   st.write(f"""**The crowd favorite(s) is/are: {pick}!**""")
+   st.write(f"""**The crowd favorite is: {pick}!**""")
+   st.balloons()
 
-with st.spinner('Wait for it...'):
-    output = 'hello world!'
-    
-st.success('Done!')
-st.balloons()
