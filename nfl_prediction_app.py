@@ -44,12 +44,13 @@ with row1_2:
 
 
 if choice == "Historical":
-    year = st.radio("Choose a start year",[2015,2016,2017,2018,2019,2020,2021])
-    week = st.slider("Choose a start week of season",1,12)
+    year = st.radio("Choose a year",[2015,2016,2017,2018,2019,2020,2021])
+    week = st.slider("Choose a week of season",1,12)
+    week = str(week)
 
 elif choice == "This week":
     year = 2021 
-    week = 4
+    week = '4'
 
      
 scores = pd.read_csv('spreadspoke_scores_bets.csv')
@@ -154,7 +155,9 @@ plt.show()
 #d = {'team_home': [1, 2], 'team_away': [3, 4]}
 #gather_data = pd.DataFrame(data=d)
 
-current = nfl_final.loc[(nfl_final.schedule_season == 2021) & (nfl_final.schedule_week == '4')]
+
+current = nfl_final.loc[(nfl_final.schedule_season == year) & (nfl_final.schedule_week == week)]
+
      
 # LAYING OUT THE 'GATHER' OF THE APP 
 row2_1, row2_2 = st.columns((2, 1))
@@ -164,7 +167,7 @@ with row2_1:
     st.write(
         f"""**All NFL Games from {year}**"""
     )
-    st.table(current)
+    st.table(current['schedule_season','schedule_week','team_home','team_away','predicted_point_diff'])
 
 with row2_2:
     st.write("**Gather Insights**")
