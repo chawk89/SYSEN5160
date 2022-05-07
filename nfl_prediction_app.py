@@ -238,12 +238,11 @@ axs[0].scatter(win_prob_nondominated, risk_nondominated, c='r',marker="o")
 axs[0].set_xlabel("Win_prob")
 axs[0].set_ylabel("Risk")
 
-axs[1].scatter(win_prob_dominated, risk_dominated, c='b')
-axs[1].scatter(win_prob_nondominated, risk_nondominated, c='r',marker="o")
+axs[1].barplot(feature_imp, feature_imp.index)
 #axs[1].set_xlim([0, 15])
 #axs[1].set_ylim([0, 5e-3])
-axs[1].set_xlabel("Win_prob")
-axs[1].set_ylabel("Risk")
+axs[1].set_xlabel("Feature Importance Score")
+axs[1].set_ylabel("Features")
 
 plt.tight_layout() 
 plt.show()
@@ -260,7 +259,7 @@ with row3_2:
         "**Here are the recommendations**"
     )
   if clicked:
-          st.table(best_bets[['team_home','win_probability']]) 
+          st.table(best_bets[['team_home','win_probability','moneyline_home']]) 
 
 # LAYING OUT THE 'Evaluation' OF THE APP WITH THE MAPS
 row4_1, row4_2 = st.columns((2, 1))
