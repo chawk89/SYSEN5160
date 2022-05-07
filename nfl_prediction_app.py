@@ -218,9 +218,6 @@ index_arr = np.array(list(non_dominated_ids))
 mask_arr = np.zeros(n_samples, dtype=int)
 
 mask_arr[index_arr] = 1
-display(mask_arr)
-
-
 current['non-dominated'] = mask_arr
 
 win_prob_dominated = current['win_probability'].loc[current['non-dominated'] == 0]
