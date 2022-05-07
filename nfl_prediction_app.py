@@ -157,7 +157,7 @@ plt.show()
 
 
 current = nfl_final.loc[(nfl_final.schedule_season == year) & (nfl_final.schedule_week == week)]
-
+abbreviated_current = current['schedule_season','schedule_week','team_home','team_away','predicted_point_diff']
      
 # LAYING OUT THE 'GATHER' OF THE APP 
 row2_1, row2_2 = st.columns((2, 1))
@@ -165,9 +165,9 @@ row2_1, row2_2 = st.columns((2, 1))
 
 with row2_1:
     st.write(
-        f"""**All NFL Games from {year}**"""
+        f"""**All NFL Games from {year} & Week: {week}**"""
     )
-    st.table(current['schedule_season','schedule_week','team_home','team_away','predicted_point_diff'])
+    st.table(abbreviated_current)
 
 with row2_2:
     st.write("**Gather Insights**")
@@ -229,7 +229,6 @@ win_prob_nondominated = current['win_probability'].loc[current['non-dominated'] 
 risk_nondominated = current['moneyline_home'].loc[current['non-dominated'] == 1]
 
 fig, axs = plt.subplots(2,figsize=(6,9)) 
-
 
 axs[0].scatter(win_prob_dominated, risk_dominated, c='b')
 axs[0].scatter(win_prob_nondominated, risk_nondominated, c='r',marker="o")
