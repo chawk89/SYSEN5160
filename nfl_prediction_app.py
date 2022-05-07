@@ -238,7 +238,7 @@ axs[0].scatter(win_prob_nondominated, risk_nondominated, c='r',marker="o")
 axs[0].set_xlabel("Win_prob")
 axs[0].set_ylabel("Risk")
 
-axs[1].barplot(feature_imp, feature_imp.index)
+axs[1].bar(feature_imp, feature_imp.index)
 #axs[1].set_xlim([0, 15])
 #axs[1].set_ylim([0, 5e-3])
 axs[1].set_xlabel("Feature Importance Score")
