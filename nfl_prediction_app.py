@@ -150,12 +150,6 @@ plt.legend()
 plt.show()
 
 
-
-#Proxy data frame
-#d = {'team_home': [1, 2], 'team_away': [3, 4]}
-#gather_data = pd.DataFrame(data=d)
-
-
 current = nfl_final.loc[(nfl_final.schedule_season == year) & (nfl_final.schedule_week == week)]
 
 #>>>>>>> LAYING OUT THE 'GATHER Data' (Top Row) OF THE APP <<<<<<<<<<<
@@ -237,7 +231,7 @@ axs[0].scatter(win_prob_nondominated, risk_nondominated, c='r',marker="o")
 #axs[0].set_ylim([0, 5e-3])
 axs[0].set_xlabel("Win_prob")
 axs[0].axvline(x = 0.5, color = 'b', label = 'Probability Threshold')
-axs[0].set_ylabel("Risk")
+axs[0].set_ylabel("Opportunity:Risk Ratio")
 axs[0].set_title("Red Teams are Pareto Optimal")
 
 axs[1].bar(feature_imp, feature_imp.index)
@@ -261,6 +255,10 @@ with row3_2:
     )
   if clicked:
           st.table(best_bets[['team_home','win_probability','moneyline_home']]) 
+  options = st.multiselect(
+     'Select the most suitable games: ',
+     best_bets.team_home_to_list(),
+     best_bets.team_home_to_list())
 
 #>>>> LAYING OUT THE 'RECOMMNEDATIONS' ROW OF THE APP <<<<<<
 row4_1, row4_2 = st.columns((1, 2))
