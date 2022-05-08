@@ -124,6 +124,7 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3)
 print(len(x_train))
 print(len(x_test))
 
+random.seed(1234)
 model=RandomForestClassifier(n_estimators=120, max_features=2)
 
 # Train the model using the training sets y_pred=clf.predict(X_test)
@@ -257,8 +258,8 @@ with row3_2:
           st.table(best_bets[['team_home','win_probability','moneyline_home']]) 
   options = st.multiselect(
      'Select the most suitable games: ',
-     best_bets.team_home_to_list(),
-     best_bets.team_home_to_list())
+     best_bets.team_home.tolist(),
+     best_bets.team_home.tolist() )
 
 #>>>> LAYING OUT THE 'RECOMMNEDATIONS' ROW OF THE APP <<<<<<
 row4_1, row4_2 = st.columns((1, 2))
