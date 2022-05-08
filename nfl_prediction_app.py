@@ -261,7 +261,7 @@ with row3_2:
                best_bets.team_home.tolist(),
                best_bets.team_home.tolist() )
  
-user_bets = best_bets[best_bets['team_home'].isin(options)]
+#user_bets = best_bets[best_bets['team_home'].isin(options)]
 
 #>>>> LAYING OUT THE 'RECOMMNEDATIONS' ROW OF THE APP <<<<<<
 row4_1, row4_2 = st.columns((1, 2))
