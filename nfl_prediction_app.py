@@ -254,14 +254,15 @@ with row3_2:
   st.write(
         "**Here are the recommendations**"
     )
+  options =  ['0','0','0']
   if clicked:
           st.table(best_bets[['team_home','win_probability','moneyline_home']]) 
           options = st.multiselect(
                'Select the most suitable games: ',
                best_bets.team_home.tolist(),
                best_bets.team_home.tolist() )
- 
-#user_bets = best_bets[best_bets['team_home'].isin(options)]
+
+user_bets = best_bets[best_bets['team_home'].isin(options)]
 
 #>>>> LAYING OUT THE 'RECOMMNEDATIONS' ROW OF THE APP <<<<<<
 row4_1, row4_2 = st.columns((1, 2))
