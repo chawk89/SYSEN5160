@@ -124,7 +124,7 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3)
 print(len(x_train))
 print(len(x_test))
 
-np.random.seed(12)
+np.random.seed(123)
 model=RandomForestClassifier(n_estimators=120, max_features=2)
 
 # Train the model using the training sets y_pred=clf.predict(X_test)
@@ -282,11 +282,11 @@ with row4_2:
         "**Get wisdom of the crowd through betting trends**"
     )
   clicked = st.button("Get my final recommendation!")
-  pick = best_bets.loc[best_bets['handle_percentage_home'] == best_bets.handle_percentage_home.max()]
+  pick = user_bets.loc[user_bets['handle_percentage_home'] == user_bets.handle_percentage_home.max()]
 
   
   if clicked:
-   st.dataframe(best_bets[['team_home','bet_percentage_home','handle_percentage_home']])
+   st.dataframe(user_bets[['team_home','bet_percentage_home','handle_percentage_home']])
    st.write(pick['team_home'])
    #st.balloons()
 
