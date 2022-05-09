@@ -182,14 +182,16 @@ rcParams.update({'font.size': 12})
 rcParams['font.family'] = 'sans-serif'
 rcParams['font.sans-serif'] = ['DejaVu Sans']
 
+#Bring the away teams into their own dataframe and combine with existing
 current_away = current[['team_away','home_outcome','moneyline_away','handle_percentage_home','bet_percentage_home','win_probability']]
 current_away['home_outcome'] = np.where(current_away['home_outcome'] == 'loss', 'win', 'loss')
 current_away['bet_percentage_home'] = np.where(current_away['bet_percentage_home'] == 0, 0, 1- current_away['bet_percentage_home'])
 current_away['handle_percentage_home'] = np.where(current_away['handle_percentage_home'] == 0, 0, 1- current_away['handle_percentage_home'])
 current_away['win_probability'] = np.where(current_away['win_probability'] == 0, 0, 1- current_away['win_probability'])
-
+current_away.rename(columns={'team_away' : 'teamhome', 'moneyline_away' : 'moneyline_home'})
 current = pd.concat([current, current_away])
 
+#find dominated sets and create a list
 i = 0
 dominated_ids = []
 
