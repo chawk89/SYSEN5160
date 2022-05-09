@@ -143,9 +143,10 @@ feature_imp = pd.Series(model.feature_importances_,index=x.columns.values).sort_
 current = nfl_final.loc[(nfl_final.schedule_season == year) & (nfl_final.schedule_week == week)]
 
 st.markdown("""---""")
+
 #>>>>>>> LAYING OUT THE 'GATHER Data' (Top Row) OF THE APP <<<<<<<<<<<
-row2_1, row2_2 = st.columns((2, 1))
 st.header( "**Gather**" )
+row2_1, row2_2 = st.columns((2, 1))
 
 with row2_1:
     st.write(
@@ -161,8 +162,8 @@ with row2_2:
 
 st.markdown("""---""")
 #>>> LAYING OUT THE 'Evaluation' ROW OF THE APP <<<<<
-row3_1, row3_2 = st.columns((1, 2))
 st.header( "**Evaluate**" )
+row3_1, row3_2 = st.columns((1, 2))
 
 current_predict = current[['altitude_advantage',  'travel_advantage','weather_wind_mph', 'weather_humidity', 'predicted_point_diff']]
 predictions = model.predict_proba(current_predict)
@@ -226,9 +227,9 @@ axs[0].axvline(x = 0.5, color = 'b', label = 'Probability Threshold')
 axs[0].set_ylabel("Opportunity:Risk Ratio")
 axs[0].set_title("Red Teams are Pareto Optimal")
 
-axs[1].bar(feature_imp, feature_imp.index, width=0.4, align='edge')
-axs[1].set_xlabel("Feature Importance Score")
-axs[1].set_ylabel("Features")
+axs[1].bar(feature_imp.index, feature_imp, width=0.4, align='edge')
+axs[1].set_xlabel("Features")
+axs[1].set_ylabel("Feature Importance Score")
 axs[1].set_title("Top Factors of Win Probability")
 
 plt.tight_layout() 
@@ -263,9 +264,10 @@ with row3_2:
      st.session_state.default_options = best_bets.team_home.tolist()
 
 st.markdown("""---""")     
+
 #>>>> LAYING OUT THE 'RECOMMNEDATIONS' ROW OF THE APP <<<<<<
-row4_1, row4_2 = st.columns((1, 2))
 st.header( "**Pick**" )
+row4_1, row4_2 = st.columns((1, 2))
 
 with row4_1:
     st.write(
