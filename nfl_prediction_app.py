@@ -275,6 +275,9 @@ with row4_1:
     st.write(
         "Work in Progress!"
     )
+    st.write(
+        options
+    )
 
 
 with row4_2:
