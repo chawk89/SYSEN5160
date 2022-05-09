@@ -266,11 +266,9 @@ with row3_2:
                st.session_state.default_options )
           st.session_state.default_options = st.session_state.options
           st.write('You selected:', st.session_state.options)
-          
-   
-
-user_bets = best_bets[best_bets['team_home'].isin(st.session_state.options)]
-
+          user_bets = best_bets[best_bets['team_home'].isin(st.session_state.options)]
+  else:
+     user_bets = best_bets
 #>>>> LAYING OUT THE 'RECOMMNEDATIONS' ROW OF THE APP <<<<<<
 row4_1, row4_2 = st.columns((1, 2))
 
