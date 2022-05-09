@@ -226,7 +226,7 @@ axs[0].axvline(x = 0.5, color = 'b', label = 'Probability Threshold')
 axs[0].set_ylabel("Opportunity:Risk Ratio")
 axs[0].set_title("Red Teams are Pareto Optimal")
 
-axs[1].bar(feature_imp, feature_imp.index, width=0.4, align='edge'
+axs[1].bar(feature_imp, feature_imp.index, width=0.4, align='edge')
 axs[1].set_xlabel("Feature Importance Score")
 axs[1].set_ylabel("Features")
 axs[1].set_title("Top Factors of Win Probability")
