@@ -83,8 +83,11 @@ nfl_combined['predicted_point_diff'] = np.where(nfl_combined['team_favorite_id']
 nfl_combined['altitude_advantage'] = nfl_combined['ELEVATION'] - nfl_combined['visitor_elevation']
 
 
-##Add geographical advantage of the home team, based on travel distance of away team (doesn't factor in neutral sites)
+##Add geographical advantage of the home team, based on travel distance of away team (doesn't factor in neutral sites). Fix visitor_longitude sign issue
 travel_advantage = []
+
+nfl_combined['visitor_longitude'] = np.where(nfl_combined['visitor_longitude'] > 0.0,
+                                                -(nfl_combined['visitor_longitude']), nfl_combined['visitor_longitude'])
 for ind in nfl_combined.index:
     game_stadium = (nfl_combined['LATITUDE'][ind],nfl_combined['LONGITUDE'][ind])
     visitor_stadium = (nfl_combined['visitor_latitude'][ind],nfl_combined['visitor_longitude'][ind]) 
@@ -98,6 +101,9 @@ for ind in nfl_combined.index:
     
 
 nfl_combined['travel_advantage'] = travel_advantage 
+##Negate neutral stadium travel advantage
+nfl_combined['travel_advantage'] = np.where(nfl_combined['stadium_neutral'] == True,
+                                                0, nfl_combined['travel_advantage']) 
 
 # Simplify the data frames
 nfl_final = nfl_combined[['schedule_season','schedule_week','schedule_playoff','team_home','team_away','altitude_advantage',
@@ -175,6 +181,14 @@ sns.set_style('whitegrid')
 rcParams.update({'font.size': 12})
 rcParams['font.family'] = 'sans-serif'
 rcParams['font.sans-serif'] = ['DejaVu Sans']
+
+current_away = current[['team_away','home_outcome','moneyline_away','handle_percentage_home','bet_percentage_home','win_probability']]
+current_away['home_outcome'] = np.where(current_away['home_outcome'] == 'loss', 'win', 'loss')
+current_away['bet_percentage_home'] = np.where(current_away['bet_percentage_home'] == 0, 0, 1- current_away['bet_percentage_home'])
+current_away['handle_percentage_home'] = np.where(current_away['handle_percentage_home'] == 0, 0, 1- current_away['handle_percentage_home'])
+current_away['win_probability'] = np.where(current_away['win_probability'] == 0, 0, 1- current_away['win_probability'])
+
+current = pd.concat([current, current_away])
 
 i = 0
 dominated_ids = []
