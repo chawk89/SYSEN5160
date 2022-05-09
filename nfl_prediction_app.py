@@ -63,7 +63,7 @@ nfl_combined = nfl.join(team_stadiums.set_index('visitor_team'), on='team_away')
 
 
 ## Get games past 2010 (and before most recent year):
-nfl_combined = nfl_combined.loc[(nfl_combined.schedule_season > 2010) & (nfl_combined.schedule_season < 2021)]
+nfl_combined = nfl_combined[nfl_combined.schedule_season > 2010]
 
 
     
