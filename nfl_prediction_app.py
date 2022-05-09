@@ -264,6 +264,7 @@ with row3_2:
                'Select the most suitable games: ',
                best_bets.team_home.tolist(),
                best_bets.team_home.tolist() )
+          st.write('You selected:', st.session_state.option)
 
 user_bets = best_bets[best_bets['team_home'].isin(st.session_state.options)]
 
