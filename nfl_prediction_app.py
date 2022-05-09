@@ -191,13 +191,15 @@ current_away['win_probability'] = np.where(current_away['win_probability'] == 0,
 current_away.rename(columns={'team_away' : 'team_home', 'moneyline_away' : 'moneyline_home'}, inplace=True)
 current = pd.concat([current, current_away])
 
+current = pd.rename(columns={'team_home' : 'team', 'moneyline_home' : 'moneyline', 'bet_percentage_home' : 'bet_percentage', 'handle_percentage_home' : 'handle_percentage', 'home_outcome' : 'outcome'}, inplace=True)
+
 #find dominated sets and create a list
 i = 0
 dominated_ids = []
 
 n_samples = len(current)
 win_prob = current["win_probability"].tolist()
-risk = current["moneyline_home"].tolist()
+risk = current["moneyline"].tolist()
 
 # Search for dominated design
 while i < n_samples:
@@ -226,9 +228,9 @@ mask_arr[index_arr] = 1
 current['non-dominated'] = mask_arr
 
 win_prob_dominated = current['win_probability'].loc[current['non-dominated'] == 0]
-risk_dominated = current['moneyline_home'].loc[current['non-dominated'] == 0]
+risk_dominated = current['moneyline'].loc[current['non-dominated'] == 0]
 win_prob_nondominated = current['win_probability'].loc[current['non-dominated'] == 1]
-risk_nondominated = current['moneyline_home'].loc[current['non-dominated'] == 1]
+risk_nondominated = current['moneyline'].loc[current['non-dominated'] == 1]
 
 best_bets = current.loc[(current['non-dominated'] == 1) & (current['win_probability'] >= 0.5)]
 
@@ -238,7 +240,7 @@ axs[0].scatter(win_prob_dominated, risk_dominated, c='b')
 axs[0].scatter(win_prob_nondominated, risk_nondominated, c='r',marker="o")
 #axs[0].set_xlim([0, 15])
 #axs[0].set_ylim([0, 5e-3])
-axs[0].set_xlabel("Win_prob")
+axs[0].set_xlabel("Win Probability")
 axs[0].axvline(x = 0.5, color = 'b', label = 'Probability Threshold')
 axs[0].set_ylabel("Opportunity:Risk Ratio")
 axs[0].set_title("Red Teams are Pareto Optimal")
@@ -268,14 +270,14 @@ with row3_2:
 
                   
   if st.session_state.clicked:
-          st.table(best_bets[['team_home','win_probability','moneyline_home']]) 
+          st.table(best_bets[['team','win_probability','moneyline']]) 
           st.session_state.options = st.multiselect(
                'Select the most suitable games: ',
                best_bets.team_home.tolist(),
                best_bets.team_home.tolist() )
           st.session_state.default_options = st.session_state.options
           st.write('You selected:', st.session_state.options)
-          user_bets = best_bets[best_bets['team_home'].isin(st.session_state.options)]
+          user_bets = best_bets[best_bets['team'].isin(st.session_state.options)]
   else:
      user_bets = best_bets
      st.session_state.default_options = best_bets.team_home.tolist()
@@ -300,12 +302,12 @@ with row4_2:
         "**Get wisdom of the crowd through betting trends**"
     )
   clicked_recommendation = st.button("Get my final recommendation!")
-  pick = user_bets.loc[user_bets['handle_percentage_home'] == user_bets.handle_percentage_home.max()]
+  pick = user_bets.loc[user_bets['handle_percentage'] == user_bets.handle_percentage.max()]
 
-  #st.dataframe(user_bets[['team_home','bet_percentage_home','handle_percentage_home']])
+  #st.dataframe(user_bets[['team','bet_percentage','handle_percentage']])
   if clicked_recommendation:
-   st.dataframe(user_bets[['team_home','bet_percentage_home','handle_percentage_home']])
-   st.write(pick['team_home'])
+   st.dataframe(user_bets[['team','bet_percentage','handle_percentage']])
+   st.write(pick['team'])
    #st.balloons()
 
 st.write("Disclaimer: The application is not accountable for successful bets and discretion should be used.")
