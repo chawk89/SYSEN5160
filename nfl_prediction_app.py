@@ -269,6 +269,8 @@ with row3_2:
           user_bets = best_bets[best_bets['team_home'].isin(st.session_state.options)]
   else:
      user_bets = best_bets
+     st.session_state.default_options = best_bets.team_home.tolist()
+     
 #>>>> LAYING OUT THE 'RECOMMNEDATIONS' ROW OF THE APP <<<<<<
 row4_1, row4_2 = st.columns((1, 2))
 
