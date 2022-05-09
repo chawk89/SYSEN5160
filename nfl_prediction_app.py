@@ -254,7 +254,7 @@ with row3_2:
   st.write(
         "**Here are the recommendations**"
     )
-  options =  ['0','0','0']
+  st.session_state.options =  ['0','0','0']
   if st.session_state.clicked:
           st.table(best_bets[['team_home','win_probability','moneyline_home']]) 
           st.session_state.options = st.multiselect(
@@ -281,11 +281,11 @@ with row4_2:
   st.write(
         "**Get wisdom of the crowd through betting trends**"
     )
-  clicked = st.button("Get my final recommendation!")
+  clicked_recommendation = st.button("Get my final recommendation!")
   pick = user_bets.loc[user_bets['handle_percentage_home'] == user_bets.handle_percentage_home.max()]
 
   st.dataframe(user_bets[['team_home','bet_percentage_home','handle_percentage_home']])
-  if clicked:
+  if clicked_recommendation:
    st.dataframe(user_bets[['team_home','bet_percentage_home','handle_percentage_home']])
    st.write(pick['team_home'])
    #st.balloons()
