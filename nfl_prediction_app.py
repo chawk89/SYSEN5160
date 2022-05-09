@@ -287,7 +287,7 @@ with row4_2:
   clicked = st.button("Get my final recommendation!")
   pick = user_bets.loc[user_bets['handle_percentage_home'] == user_bets.handle_percentage_home.max()]
 
-  
+  st.dataframe(user_bets[['team_home','bet_percentage_home','handle_percentage_home']])
   if clicked:
    st.dataframe(user_bets[['team_home','bet_percentage_home','handle_percentage_home']])
    st.write(pick['team_home'])
