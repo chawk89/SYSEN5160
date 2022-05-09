@@ -62,8 +62,8 @@ nfl_combined = nfl.join(team_stadiums.set_index('visitor_team'), on='team_away')
 
 
 
-## Get games past 2010:
-nfl_combined = nfl_combined[(nfl_combined.schedule_season > 2010)]
+## Get games past 2010 (and before most recent year):
+nfl_combined = nfl_combined[(nfl_combined.schedule_season > 2010) & (nfl_combined.schedule_season < 2021)]
 
 
     
@@ -309,10 +309,11 @@ with row4_2:
    st.dataframe(user_bets[['team','bet_percentage','handle_percentage']])
    st.write(pick['team'])
    #st.balloons()
-  clicked_outcome = st.button("Get real outcomes (if historical)!")
+  clicked_outcome = st.button("Get historical outcomes, if applicable!")
   if clicked_outcome:   
      st.dataframe(user_bets[['team','bet_percentage','handle_percentage','outcome']])
-     st.write("Our pick: " + pick[['team','outcome']])
+     st.write("**Our Pick:**")
+     st.write(pick[['team','outcome']])
 
               
 st.write("Disclaimer: The application is not accountable for successful bets and discretion should be used.")
