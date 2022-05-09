@@ -276,11 +276,11 @@ with row3_2:
                best_bets.team_home.tolist(),
                best_bets.team_home.tolist() )
           st.session_state.default_options = st.session_state.options
-          st.write('You selected:', st.session_state.options)
+          ##st.write('You selected:', st.session_state.options)
           user_bets = best_bets[best_bets['team'].isin(st.session_state.options)]
   else:
      user_bets = best_bets
-     st.session_state.default_options = best_bets.team_home.tolist()
+     st.session_state.default_options = best_bets.team.tolist()
 
 st.markdown("""---""")     
 
@@ -309,6 +309,11 @@ with row4_2:
    st.dataframe(user_bets[['team','bet_percentage','handle_percentage']])
    st.write(pick['team'])
    #st.balloons()
+  clicked_outcome = st.button("Get real outcomes (if historical)!")
+  if clicked_outcome:   
+     st.dataframe(user_bets[['team','bet_percentage','handle_percentage','outcome']])
+     st.write("Our pick: " + pick[['team','outcome']])
 
+              
 st.write("Disclaimer: The application is not accountable for successful bets and discretion should be used.")
 
