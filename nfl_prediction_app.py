@@ -142,6 +142,7 @@ feature_imp = pd.Series(model.feature_importances_,index=x.columns.values).sort_
 
 current = nfl_final.loc[(nfl_final.schedule_season == year) & (nfl_final.schedule_week == week)]
 
+st.markdown("""---""")
 #>>>>>>> LAYING OUT THE 'GATHER Data' (Top Row) OF THE APP <<<<<<<<<<<
 row2_1, row2_2 = st.columns((2, 1))
 
