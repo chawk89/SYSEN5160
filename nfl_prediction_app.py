@@ -257,7 +257,7 @@ with row3_2:
 
   #since script reloads with each interaction, we only need to create dummy data if nothing is in the list
   if len(st.session_state.options) < 1:
-          st.session_state.options =['0','0','0']
+          st.session_state.options = ['0','0','0']
           st.session_state.default_options = best_bets.team_home.tolist()
                   
   if st.session_state.clicked:
