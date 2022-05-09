@@ -159,7 +159,7 @@ with row2_2:
     if st.session_state.clicked:
      st.write('Getting bets!')
 
-
+st.markdown("""---""")
 #>>> LAYING OUT THE 'Evaluation' ROW OF THE APP <<<<<
 row3_1, row3_2 = st.columns((1, 2))
 
@@ -260,13 +260,14 @@ with row3_2:
   else:
      user_bets = best_bets
      st.session_state.default_options = best_bets.team_home.tolist()
-     
+
+st.markdown("""---""")     
 #>>>> LAYING OUT THE 'RECOMMNEDATIONS' ROW OF THE APP <<<<<<
 row4_1, row4_2 = st.columns((1, 2))
 
 
 with row4_1:
-    st.write(
+    st.header(
         "**Post poll on Reddit**"
     )
     st.write(
@@ -275,7 +276,7 @@ with row4_1:
 
 
 with row4_2:
-  st.write(
+  st.header(
         "**Get wisdom of the crowd through betting trends**"
     )
   clicked_recommendation = st.button("Get my final recommendation!")
