@@ -188,7 +188,7 @@ current_away['home_outcome'] = np.where(current_away['home_outcome'] == 'loss', 
 current_away['bet_percentage_home'] = np.where(current_away['bet_percentage_home'] == 0, 0, 1- current_away['bet_percentage_home'])
 current_away['handle_percentage_home'] = np.where(current_away['handle_percentage_home'] == 0, 0, 1- current_away['handle_percentage_home'])
 current_away['win_probability'] = np.where(current_away['win_probability'] == 0, 0, 1- current_away['win_probability'])
-current_away.rename(columns={'team_away' : 'teamhome', 'moneyline_away' : 'moneyline_home'})
+current_away.rename(columns={'team_away' : 'team_home', 'moneyline_away' : 'moneyline_home'}, inplace=True)
 current = pd.concat([current, current_away])
 
 #find dominated sets and create a list
