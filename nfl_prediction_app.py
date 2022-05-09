@@ -65,8 +65,7 @@ nfl_combined = nfl.join(team_stadiums.set_index('visitor_team'), on='team_away')
 ## Get games past 2010:
 nfl_combined = nfl_combined[nfl_combined.schedule_season > 2010]
 
-
-    
+   
     
 ## Add real point differential variable from the perspective of the home team   
 point_diff = nfl_combined["score_home"] - nfl_combined["score_away"]
@@ -119,12 +118,12 @@ column_means = nfl_final.mean()
 nfl_final[['weather_wind_mph', 'weather_humidity','altitude_advantage','travel_advantage']] = nfl_final[['weather_wind_mph', 'weather_humidity','altitude_advantage','travel_advantage']].fillna(column_means)
 
 # Remove most recent year from training
-nfl_final = nfl_final[nfl_final.schedule_season < 2021]
+nfl_train = nfl_final[nfl_final.schedule_season < 2021]
 
 # Divide up features (x) and classes (y)
 
-x=nfl_final[['altitude_advantage',  'travel_advantage','weather_wind_mph', 'weather_humidity', 'predicted_point_diff']]  # Features
-y=nfl_final['home_outcome']  
+x=nfl_train[['altitude_advantage',  'travel_advantage','weather_wind_mph', 'weather_humidity', 'predicted_point_diff']]  # Features
+y=nfl_train['home_outcome']  
 
 # Split dataset into the training set and test set
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3)
