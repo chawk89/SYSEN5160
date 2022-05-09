@@ -62,7 +62,7 @@ nfl_combined = nfl.join(team_stadiums.set_index('visitor_team'), on='team_away')
 
 
 
-## Get games past 2010 (and before most recent year):
+## Get games past 2010:
 nfl_combined = nfl_combined[nfl_combined.schedule_season > 2010]
 
 
@@ -118,6 +118,8 @@ nfl_final = nfl_combined[['schedule_season','schedule_week','schedule_playoff','
 column_means = nfl_final.mean()
 nfl_final[['weather_wind_mph', 'weather_humidity','altitude_advantage','travel_advantage']] = nfl_final[['weather_wind_mph', 'weather_humidity','altitude_advantage','travel_advantage']].fillna(column_means)
 
+# Remove most recent year from training
+nfl_final = nfl_final[nfl_final.schedule_season < 2021]
 
 # Divide up features (x) and classes (y)
 
