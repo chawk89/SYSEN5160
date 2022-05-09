@@ -245,7 +245,7 @@ with row3_1:
 
 with row3_2:
   st.write(
-        "**Here are the recommendations** (Press 'Get Best Bets' button above)"
+        "**Here are the recommendations:** Press 'Get Best Bets' button above and choose your priorities"
     )
 
   #since script reloads with each interaction, we only need to create dummy data if nothing is in the list
@@ -291,4 +291,6 @@ with row4_2:
    st.dataframe(user_bets[['team_home','bet_percentage_home','handle_percentage_home']])
    st.write(pick['team_home'])
    #st.balloons()
+
+st.write("Disclaimer: The application is not accountable for successful bets and discretion should be used.")
 
