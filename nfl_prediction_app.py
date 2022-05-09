@@ -140,17 +140,6 @@ feature_imp = pd.Series(model.feature_importances_,index=x.columns.values).sort_
 
 #Source: datacamp random forest "Finding Important Features in Scikit-learn"
 
-#%matplotlib inline
-# Creating a bar plot
-sns.barplot(x=feature_imp, y=feature_imp.index)
-# Add labels to your graph
-plt.xlabel('Feature Importance Score')
-plt.ylabel('Features')
-plt.title("Visualizing Important Features")
-plt.legend()
-plt.show()
-
-
 current = nfl_final.loc[(nfl_final.schedule_season == year) & (nfl_final.schedule_week == week)]
 
 #>>>>>>> LAYING OUT THE 'GATHER Data' (Top Row) OF THE APP <<<<<<<<<<<
@@ -263,7 +252,7 @@ with row3_2:
           st.session_state.options = st.multiselect(
                'Select the most suitable games: ',
                best_bets.team_home.tolist(),
-               st.session_state.default_options )
+               best_bets.team_home.tolist() )
           st.session_state.default_options = st.session_state.options
           st.write('You selected:', st.session_state.options)
           user_bets = best_bets[best_bets['team_home'].isin(st.session_state.options)]
