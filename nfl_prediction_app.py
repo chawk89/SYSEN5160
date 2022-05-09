@@ -145,7 +145,7 @@ current = nfl_final.loc[(nfl_final.schedule_season == year) & (nfl_final.schedul
 st.markdown("""---""")
 #>>>>>>> LAYING OUT THE 'GATHER Data' (Top Row) OF THE APP <<<<<<<<<<<
 row2_1, row2_2 = st.columns((2, 1))
-
+st.header( "**Gather**" )
 
 with row2_1:
     st.write(
@@ -162,6 +162,7 @@ with row2_2:
 st.markdown("""---""")
 #>>> LAYING OUT THE 'Evaluation' ROW OF THE APP <<<<<
 row3_1, row3_2 = st.columns((1, 2))
+st.header( "**Evaluate**" )
 
 current_predict = current[['altitude_advantage',  'travel_advantage','weather_wind_mph', 'weather_humidity', 'predicted_point_diff']]
 predictions = model.predict_proba(current_predict)
@@ -225,7 +226,7 @@ axs[0].axvline(x = 0.5, color = 'b', label = 'Probability Threshold')
 axs[0].set_ylabel("Opportunity:Risk Ratio")
 axs[0].set_title("Red Teams are Pareto Optimal")
 
-axs[1].bar(feature_imp, feature_imp.index)
+axs[1].bar(feature_imp, feature_imp.index. 0.35, align='edge'
 axs[1].set_xlabel("Feature Importance Score")
 axs[1].set_ylabel("Features")
 axs[1].set_title("Top Factors of Win Probability")
@@ -264,10 +265,10 @@ with row3_2:
 st.markdown("""---""")     
 #>>>> LAYING OUT THE 'RECOMMNEDATIONS' ROW OF THE APP <<<<<<
 row4_1, row4_2 = st.columns((1, 2))
-
+st.header( "**Pick**" )
 
 with row4_1:
-    st.header(
+    st.write(
         "**Post poll on Reddit**"
     )
     st.write(
@@ -276,7 +277,7 @@ with row4_1:
 
 
 with row4_2:
-  st.header(
+  st.write(
         "**Get wisdom of the crowd through betting trends**"
     )
   clicked_recommendation = st.button("Get my final recommendation!")
