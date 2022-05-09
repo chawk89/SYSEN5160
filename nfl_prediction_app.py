@@ -166,7 +166,7 @@ with row2_1:
 with row2_2:
     st.write("**Gather Insights**")
     st.session_state.clicked = st.button("Get best bets")
-    if clicked:
+    if st.session_state.clicked:
      st.write('Getting bets!')
 
 
