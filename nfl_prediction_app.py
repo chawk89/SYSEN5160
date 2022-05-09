@@ -273,8 +273,8 @@ with row3_2:
           st.table(best_bets[['team','win_probability','moneyline']]) 
           st.session_state.options = st.multiselect(
                'Select the most suitable games: ',
-               best_bets.team_home.tolist(),
-               best_bets.team_home.tolist() )
+               best_bets.team.tolist(),
+               best_bets.team.tolist() )
           st.session_state.default_options = st.session_state.options
           ##st.write('You selected:', st.session_state.options)
           user_bets = best_bets[best_bets['team'].isin(st.session_state.options)]
