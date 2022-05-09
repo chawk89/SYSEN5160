@@ -165,7 +165,7 @@ with row2_1:
 
 with row2_2:
     st.write("**Gather Insights**")
-    clicked = st.button("Get best bets")
+    st.session_state.clicked = st.button("Get best bets")
     if clicked:
      st.write('Getting bets!')
 
@@ -255,7 +255,7 @@ with row3_2:
         "**Here are the recommendations**"
     )
   options =  ['0','0','0']
-  if clicked:
+  if st.session_state.clicked:
           st.table(best_bets[['team_home','win_probability','moneyline_home']]) 
           st.session_state.options = st.multiselect(
                'Select the most suitable games: ',
