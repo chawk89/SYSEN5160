@@ -254,10 +254,10 @@ with row3_2:
   st.write(
         "**Here are the recommendations**"
     )
-  options =  ['0','0','0']
+  st.session_state.options =  ['0','0','0']
   if clicked:
           st.table(best_bets[['team_home','win_probability','moneyline_home']]) 
-          options = st.multiselect(
+          st.session_state.options = st.multiselect(
                'Select the most suitable games: ',
                best_bets.team_home.tolist(),
                best_bets.team_home.tolist() )
@@ -274,9 +274,6 @@ with row4_1:
     )
     st.write(
         "Work in Progress!"
-    )
-    st.write(
-        options
     )
 
 
