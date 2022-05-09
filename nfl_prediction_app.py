@@ -229,6 +229,7 @@ axs[0].set_title("Red Teams are Pareto Optimal")
 
 axs[1].bar(feature_imp.index, feature_imp, width=0.4, align='edge')
 axs[1].set_xlabel("Features")
+axs[1].tick_params(axis='x', labelrotation = 45)
 axs[1].set_ylabel("Feature Importance Score")
 axs[1].set_title("Top Factors of Win Probability")
 
@@ -237,14 +238,14 @@ plt.show()
 
 with row3_1:
     st.write(
-        "**Here's the tradespace**"   
+        "**Here's the tradespace:** See the trade-offs you want to make"   
     )
     st.pyplot(fig)
 
 
 with row3_2:
   st.write(
-        "**Here are the recommendations**"
+        "**Here are the recommendations** (Press 'Get Best Bets' button above)"
     )
 
   #since script reloads with each interaction, we only need to create dummy data if nothing is in the list
