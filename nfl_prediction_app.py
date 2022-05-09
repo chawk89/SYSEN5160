@@ -258,13 +258,16 @@ with row3_2:
   #since script reloads with each interaction, we only need to create dummy data if nothing is in the list
   if len(st.session_state.options) < 1:
           st.session_state.options =['0','0','0']
+          st.session_state.default_options = best_bets.team_home.tolist()
+                  
   if st.session_state.clicked:
           st.table(best_bets[['team_home','win_probability','moneyline_home']]) 
           st.session_state.options = st.multiselect(
                'Select the most suitable games: ',
                best_bets.team_home.tolist(),
-               best_bets.team_home.tolist() )
-          st.write('You selected:', st.session_state.option)
+               st.session_state.default_options )
+          st.session_state.default_options = st.session_state.options
+          st.write('You selected:', st.session_state.options)
 
 user_bets = best_bets[best_bets['team_home'].isin(st.session_state.options)]
 
