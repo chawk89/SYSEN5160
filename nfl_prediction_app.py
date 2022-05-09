@@ -254,7 +254,10 @@ with row3_2:
   st.write(
         "**Here are the recommendations**"
     )
-  st.session_state.options =  ['0','0','0']
+
+  #since script reloads with each interaction, we only need to create dummy data if nothing is in the list
+  if len(st.session_state.options) < 1:
+          st.session_state.options =['0','0','0']
   if st.session_state.clicked:
           st.table(best_bets[['team_home','win_probability','moneyline_home']]) 
           st.session_state.options = st.multiselect(
