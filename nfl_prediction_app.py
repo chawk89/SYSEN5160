@@ -51,7 +51,7 @@ if choice == "Historical":
 
 elif choice == "This week":
     year = 2021 
-    week = '4'
+    week = '2'
 
      
 scores = pd.read_csv('spreadspoke_scores_bets.csv')
