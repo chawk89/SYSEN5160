@@ -134,7 +134,7 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3)
 print(len(x_train))
 print(len(x_test))
 
-np.random.seed(12)
+np.random.seed(123)
 model=RandomForestClassifier(n_estimators=120, max_features=2)
 
 # Train the model using the training sets y_pred=clf.predict(X_test)
