@@ -23,8 +23,9 @@ st.set_page_config(
  )
 
 
-
-# LAYOUT FOR THE TOP SECTION OF THE APP
+###################################################
+# LAYING OUT THE TOP Section OF THE APP 
+###################################################
 row1_1, row1_2 = st.columns((2, 3))
 
 with row1_1:
@@ -45,7 +46,7 @@ with row1_2:
 
 if choice == "Historical":
     year = st.radio("Choose a year",[2015,2016,2017,2018,2019,2020,2021])
-    week = st.slider("Choose a week of season",1,12)
+    week = st.slider("Choose a week of season",1,18)
     week = str(week)
 
 elif choice == "This week":
@@ -61,12 +62,10 @@ nfl = scores.join(stadiums.set_index('stadium_name'), on='stadium')
 nfl_combined = nfl.join(team_stadiums.set_index('visitor_team'), on='team_away')
 
 
-
 ## Get games past 2010:
 nfl_combined = nfl_combined[nfl_combined.schedule_season > 2010]
 
-   
-    
+       
 ## Add real point differential variable from the perspective of the home team   
 point_diff = nfl_combined["score_home"] - nfl_combined["score_away"]
 nfl_combined["point_diff"] = point_diff  
@@ -98,9 +97,10 @@ for ind in nfl_combined.index:
         t = None
         travel_advantage.append(t)
     
-
+# Add travel advantage feature
 nfl_combined['travel_advantage'] = travel_advantage 
-##Negate neutral stadium travel advantage
+
+# Negate neutral stadium travel advantage
 nfl_combined['travel_advantage'] = np.where(nfl_combined['stadium_neutral'] == True,
                                                 0, nfl_combined['travel_advantage']) 
 
@@ -109,10 +109,6 @@ nfl_final = nfl_combined[['schedule_season','schedule_week','schedule_playoff','
                          'travel_advantage','stadium','weather_wind_mph','weather_humidity','predicted_point_diff','point_diff','home_outcome',
                          'moneyline_home','moneyline_away','handle_percentage_home','bet_percentage_home']]
                        
-
-# Drop NA values for analysis
-#nfl_final = nfl_final.dropna()
-
 # Clean data
 column_means = nfl_final.mean()
 nfl_final[['weather_wind_mph', 'weather_humidity','altitude_advantage','travel_advantage']] = nfl_final[['weather_wind_mph', 'weather_humidity','altitude_advantage','travel_advantage']].fillna(column_means)
@@ -124,7 +120,6 @@ nfl_final[['weather_wind_mph', 'weather_humidity','altitude_advantage','travel_a
 nfl_train = nfl_final[nfl_final.schedule_season < 2021]
 
 # Divide up features (x) and classes (y)
-
 x=nfl_train[['altitude_advantage',  'travel_advantage','weather_wind_mph', 'weather_humidity', 'predicted_point_diff']]  # Features
 y=nfl_train['home_outcome']  
 
@@ -134,6 +129,7 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3)
 print(len(x_train))
 print(len(x_test))
 
+# Set up RF classifier
 np.random.seed(123)
 model=RandomForestClassifier(n_estimators=120, max_features=2)
 
@@ -145,25 +141,28 @@ y_pred=model.predict(x_test)
 # Model Accuracy, how often is the classifier correct?
 print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
 
+
+# Get most important features
 feature_imp = pd.Series(model.feature_importances_,index=x.columns.values).sort_values(ascending=False)
-
-
-#Source: datacamp random forest "Finding Important Features in Scikit-learn"
 
 current = nfl_final.loc[(nfl_final.schedule_season == year) & (nfl_final.schedule_week == week)]
 
 st.markdown("""---""")
 
-#>>>>>>> LAYING OUT THE 'GATHER Data' (Top Row) OF THE APP <<<<<<<<<<<
+###################################################
+# LAYING OUT THE 'GATHER' Section OF THE APP 
+###################################################
 st.header( "**Gather**" )
 row2_1, row2_2 = st.columns((2, 1))
 
+# Provide the gamde details for the week
 with row2_1:
     st.write(
         f"""**All NFL Games from {year} & Week: {week}**"""
     )
     st.table(current[['schedule_season','schedule_week','team_home','team_away','predicted_point_diff']])
 
+# Provide the button to get best bets and insights
 with row2_2:
     st.write("**Gather Insights**")
     st.session_state.clicked = st.button("Get best bets")
@@ -171,7 +170,10 @@ with row2_2:
      st.write('Getting bets!')
 
 st.markdown("""---""")
-#>>> LAYING OUT THE 'Evaluation' ROW OF THE APP <<<<<
+
+###################################################
+# LAYING OUT THE 'EVALUATE' Section OF THE APP 
+###################################################
 st.header( "**Evaluate**" )
 row3_1, row3_2 = st.columns((1, 2))
 
@@ -208,7 +210,6 @@ risk = current["moneyline"].tolist()
 # Search for dominated design
 while i < n_samples:
 
-    #Note: search for a solution in the set that has both a lower weight and a lower delta
     for j,k in zip(win_prob,risk):  
         #print(str(i)+': '+ 'comparing i to j and k')
         if win_prob[i] < j and risk[i] < k: 
@@ -238,6 +239,7 @@ risk_nondominated = current['moneyline'].loc[current['non-dominated'] == 1]
 
 best_bets = current.loc[(current['non-dominated'] == 1) & (current['win_probability'] >= 0.5)]
 
+# Set up subplots for tradespace and top factors
 fig, axs = plt.subplots(2,figsize=(6,9)) 
 
 axs[0].scatter(win_prob_dominated, risk_dominated, c='b')
@@ -258,13 +260,14 @@ axs[1].set_title("Top Factors of Win Probability")
 plt.tight_layout() 
 plt.show()
 
+# Tradespace Graph and Top Factors
 with row3_1:
     st.write(
         "**Here's the tradespace:** See the trade-offs you want to make"   
     )
     st.pyplot(fig)
 
-
+# Tradespace Recommendations
 with row3_2:
   st.write(
         "**Here are the recommendations:** Press 'Get Best Bets' button above and choose your priorities"
@@ -288,10 +291,13 @@ with row3_2:
 
 st.markdown("""---""")     
 
-#>>>> LAYING OUT THE 'RECOMMNEDATIONS' ROW OF THE APP <<<<<<
+###################################################
+# LAYING OUT THE 'PICK' Section OF THE APP 
+###################################################
 st.header( "**Pick**" )
 row4_1, row4_2 = st.columns((1, 2))
 
+# Reddit Section
 with row4_1:
     st.write(
         "**Post poll on Reddit**"
@@ -300,7 +306,7 @@ with row4_1:
         "Work in Progress!"
     )
 
-
+# Public Betting Trends Section
 with row4_2:
   st.write(
         "**Get wisdom of the crowd through betting trends**"
@@ -308,17 +314,17 @@ with row4_2:
   clicked_recommendation = st.button("Get my final recommendation!")
   pick = user_bets.loc[user_bets['handle_percentage'] == user_bets.handle_percentage.max()]
 
-  #st.dataframe(user_bets[['team','bet_percentage','handle_percentage']])
   if clicked_recommendation:
    st.dataframe(user_bets[['team','bet_percentage','handle_percentage']])
+   st.write("**Our Pick:**")
    st.write(pick['team'])
    #st.balloons()
   clicked_outcome = st.button("Get historical outcomes, if applicable!")
+
   if clicked_outcome:   
      st.dataframe(user_bets[['team','bet_percentage','handle_percentage','outcome']])
      st.write("**Our Pick:**")
      st.write(pick[['team','outcome']])
-
-              
+         
 st.write("Disclaimer: The application is not accountable for successful bets and discretion should be used.")
 
