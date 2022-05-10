@@ -125,7 +125,7 @@ nfl_train = nfl_final[nfl_final.schedule_season < 2021]
 
 # Divide up features (x) and classes (y)
 
-x=nfl_train[['altitude_advantage',  'travel_advantage','weather_wind_mph', 'weather_humidity', 'predicted_point_diff', 'schedule_week']]  # Features
+x=nfl_train[['altitude_advantage',  'travel_advantage','weather_wind_mph', 'weather_humidity', 'predicted_point_diff']]  # Features
 y=nfl_train['home_outcome']  
 
 # Split dataset into the training set and test set
@@ -175,7 +175,7 @@ st.markdown("""---""")
 st.header( "**Evaluate**" )
 row3_1, row3_2 = st.columns((1, 2))
 
-current_predict = current[['altitude_advantage',  'travel_advantage','weather_wind_mph', 'weather_humidity', 'predicted_point_diff', 'schedule_week']]
+current_predict = current[['altitude_advantage',  'travel_advantage','weather_wind_mph', 'weather_humidity', 'predicted_point_diff']]
 predictions = model.predict_proba(current_predict)
 current['win_probability'] = [item[1] for item in predictions]
 current = current.fillna(value=0)
