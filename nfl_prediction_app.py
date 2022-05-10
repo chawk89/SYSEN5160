@@ -113,16 +113,11 @@ nfl_final = nfl_combined[['schedule_season','schedule_week','schedule_playoff','
 # Drop NA values for analysis
 #nfl_final = nfl_final.dropna()
 
-# Clean data (some of this block uses recycled functions from TY WALTERS on Kaggle, 2020)
+# Clean data
 column_means = nfl_final.mean()
 nfl_final[['weather_wind_mph', 'weather_humidity','altitude_advantage','travel_advantage']] = nfl_final[['weather_wind_mph', 'weather_humidity','altitude_advantage','travel_advantage']].fillna(column_means)
 nfl_final[['weather_wind_mph', 'weather_humidity','altitude_advantage','travel_advantage']] = nfl_final[['weather_wind_mph', 'weather_humidity','altitude_advantage','travel_advantage']].fillna(column_means)
-nfl_final.loc[(nfl_final.schedule_week == '18'), 'schedule_week'] = '17'
-nfl_final.loc[(nfl_final.schedule_week == 'Wildcard') | (nfl_final.schedule_week == 'WildCard'), 'schedule_week'] = '18'
-nfl_final.loc[(nfl_final.schedule_week == 'Division'), 'schedule_week'] = '19'
-nfl_final.loc[(nfl_final.schedule_week == 'Conference'), 'schedule_week'] = '20'
-nfl_final.loc[(nfl_final.schedule_week == 'Superbowl') | (nfl_final.schedule_week == 'SuperBowl'), 'schedule_week'] = '21'
-nfl_final['schedule_week'] = nfl_final.schedule_week.astype(int)
+
 
 
 # Remove most recent year from training
@@ -139,7 +134,7 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3)
 print(len(x_train))
 print(len(x_test))
 
-np.random.seed(123)
+np.random.seed(12)
 model=RandomForestClassifier(n_estimators=120, max_features=2)
 
 # Train the model using the training sets y_pred=clf.predict(X_test)
@@ -185,8 +180,6 @@ predictions = model.predict_proba(current_predict)
 current['win_probability'] = [item[1] for item in predictions]
 current = current.fillna(value=0)
 
-nfl_final['schedule_week'] = nfl_final.schedule_week.astype(str)
-current['schedule_week'] = current.schedule_week.astype(str)
 sns.set_style('whitegrid')
 
 rcParams.update({'font.size': 12})
