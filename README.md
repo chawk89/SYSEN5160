@@ -1,6 +1,6 @@
 # SYSEN5160 Final Project: NFL Game Predicton App
 
-Colby Hawker and Kevin Lee, 2022
+Colby Hawker (ch955@cornell.edu) and Kevin Lee (kl938@cornell.edu), 2022.
 Cornell University
 
 # Abstract
