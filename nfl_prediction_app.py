@@ -113,16 +113,24 @@ nfl_final = nfl_combined[['schedule_season','schedule_week','schedule_playoff','
 # Drop NA values for analysis
 #nfl_final = nfl_final.dropna()
 
-# Clean data
+# Clean data (some of this block uses recycled functions from TY WALTERS on Kaggle, 2020)
 column_means = nfl_final.mean()
 nfl_final[['weather_wind_mph', 'weather_humidity','altitude_advantage','travel_advantage']] = nfl_final[['weather_wind_mph', 'weather_humidity','altitude_advantage','travel_advantage']].fillna(column_means)
+nfl_final[['weather_wind_mph', 'weather_humidity','altitude_advantage','travel_advantage']] = nfl_final[['weather_wind_mph', 'weather_humidity','altitude_advantage','travel_advantage']].fillna(column_means)
+nfl_final.loc[(nfl_final.schedule_week == '18'), 'schedule_week'] = '17'
+nfl_final.loc[(nfl_final.schedule_week == 'Wildcard') | (nfl_final.schedule_week == 'WildCard'), 'schedule_week'] = '18'
+nfl_final.loc[(nfl_final.schedule_week == 'Division'), 'schedule_week'] = '19'
+nfl_final.loc[(nfl_final.schedule_week == 'Conference'), 'schedule_week'] = '20'
+nfl_final.loc[(nfl_final.schedule_week == 'Superbowl') | (nfl_final.schedule_week == 'SuperBowl'), 'schedule_week'] = '21'
+nfl_final['schedule_week'] = nfl_final.schedule_week.astype(int)
+
 
 # Remove most recent year from training
 nfl_train = nfl_final[nfl_final.schedule_season < 2021]
 
 # Divide up features (x) and classes (y)
 
-x=nfl_train[['altitude_advantage',  'travel_advantage','weather_wind_mph', 'weather_humidity', 'predicted_point_diff']]  # Features
+x=nfl_train[['altitude_advantage',  'travel_advantage','weather_wind_mph', 'weather_humidity', 'predicted_point_diff', 'schedule_week']]  # Features
 y=nfl_train['home_outcome']  
 
 # Split dataset into the training set and test set
@@ -172,7 +180,7 @@ st.markdown("""---""")
 st.header( "**Evaluate**" )
 row3_1, row3_2 = st.columns((1, 2))
 
-current_predict = current[['altitude_advantage',  'travel_advantage','weather_wind_mph', 'weather_humidity', 'predicted_point_diff']]
+current_predict = current[['altitude_advantage',  'travel_advantage','weather_wind_mph', 'weather_humidity', 'predicted_point_diff', 'schedule_week']]
 predictions = model.predict_proba(current_predict)
 current['win_probability'] = [item[1] for item in predictions]
 current = current.fillna(value=0)
