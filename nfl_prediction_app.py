@@ -185,6 +185,8 @@ predictions = model.predict_proba(current_predict)
 current['win_probability'] = [item[1] for item in predictions]
 current = current.fillna(value=0)
 
+nfl_final['schedule_week'] = nfl_final.schedule_week.astype(str)
+current['schedule_week'] = current.schedule_week.astype(str)
 sns.set_style('whitegrid')
 
 rcParams.update({'font.size': 12})
