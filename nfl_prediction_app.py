@@ -312,7 +312,11 @@ with row4_2:
         "**Get wisdom of the crowd through betting trends**"
     )
   clicked_recommendation = st.button("Get my final recommendation!")
-  pick = user_bets.loc[user_bets['handle_percentage'] == user_bets.handle_percentage.max()]
+  pick = user_bets.loc[user_bets['bet_percentage'] == user_bets.bet_percentage.max()]
+
+# If there are more than one picks, or no betting data available, default to the win probability.
+  if len(pick) > 1:
+          pick = user_bets.loc[user_bets['win_probability'] == user_bets.win_probability.max()]
 
   if clicked_recommendation:
    st.dataframe(user_bets[['team','bet_percentage','handle_percentage']])
